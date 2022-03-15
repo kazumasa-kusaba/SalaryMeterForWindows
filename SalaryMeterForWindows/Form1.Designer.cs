@@ -197,7 +197,7 @@ namespace SalaryMeterForWindows
             this.labelComma1.Font = new System.Drawing.Font("MS UI Gothic", 27.85714F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelComma1.Location = new System.Drawing.Point(596, 119);
             this.labelComma1.Name = "labelComma1";
-            this.labelComma1.Size = new System.Drawing.Size(42, 66);
+            this.labelComma1.Size = new System.Drawing.Size(42, 65);
             this.labelComma1.TabIndex = 9;
             this.labelComma1.Text = ",";
             this.labelComma1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,7 +209,7 @@ namespace SalaryMeterForWindows
             this.labelComma2.Font = new System.Drawing.Font("MS UI Gothic", 27.85714F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelComma2.Location = new System.Drawing.Point(286, 119);
             this.labelComma2.Name = "labelComma2";
-            this.labelComma2.Size = new System.Drawing.Size(42, 66);
+            this.labelComma2.Size = new System.Drawing.Size(42, 65);
             this.labelComma2.TabIndex = 10;
             this.labelComma2.Text = ",";
             this.labelComma2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,6 +279,7 @@ namespace SalaryMeterForWindows
             this.buttonStart.TabIndex = 16;
             this.buttonStart.Text = "START";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonPause
             // 
@@ -290,6 +291,7 @@ namespace SalaryMeterForWindows
             this.buttonPause.TabIndex = 17;
             this.buttonPause.Text = "PAUSE";
             this.buttonPause.UseVisualStyleBackColor = true;
+            this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
             // 
             // buttonReset
             // 
@@ -301,6 +303,7 @@ namespace SalaryMeterForWindows
             this.buttonReset.TabIndex = 18;
             this.buttonReset.Text = "RESET";
             this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // MainForm
             // 

@@ -16,5 +16,20 @@ namespace SalaryMeterForWindows
         {
             InitializeComponent();
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPause_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
