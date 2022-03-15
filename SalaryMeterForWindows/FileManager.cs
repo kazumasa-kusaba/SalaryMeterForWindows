@@ -8,6 +8,18 @@ namespace SalaryMeterForWindows
 {
     class FileManager
     {
+        private static FileManager fileManager = new FileManager();
+
+        private FileManager()
+        {
+            // singleton pattern
+            // nothing to do
+        }
+
+        public static FileManager getInstance()
+        {
+            return fileManager;
+        }
     }
 
     class FileManagerForCoutUpSetting
@@ -20,7 +32,7 @@ namespace SalaryMeterForWindows
             // nothing to do
         }
 
-        public FileManagerForCoutUpSetting getInstance()
+        public static FileManagerForCoutUpSetting getInstance()
         {
             return fileManagerForCoutUpSetting;
         }
@@ -36,7 +48,7 @@ namespace SalaryMeterForWindows
             // nothing to do
         }
 
-        public FileManagerForState getInstance()
+        public static FileManagerForState getInstance()
         {
             return fileManagerForState;
         }

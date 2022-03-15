@@ -12,9 +12,13 @@ namespace SalaryMeterForWindows
 {
     public partial class MainForm : Form
     {
+        private State state = null;
+
         public MainForm()
         {
             InitializeComponent();
+
+            state = PauseState.getInstance();
         }
 
         private void buttonStart_Click(object sender, EventArgs e)

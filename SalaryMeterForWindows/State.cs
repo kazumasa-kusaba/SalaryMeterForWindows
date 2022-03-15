@@ -8,6 +8,13 @@ namespace SalaryMeterForWindows
 {
     abstract class State
     {
+        private FileManager fileManager = null;
+
+        public State()
+        {
+            fileManager = FileManager.getInstance();
+        }
+
         public void start()
         {
             // nothing to do
