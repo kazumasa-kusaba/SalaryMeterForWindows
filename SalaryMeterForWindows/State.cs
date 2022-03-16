@@ -1,55 +1,103 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SalaryMeterForWindows
 {
-    abstract class State
+    class StateManager
     {
-        private FileManager fileManager = null;
+        private static StateManager stateManager = new StateManager();
 
-        public State()
+        private State state = PauseState.getInstance();
+
+        private StateManager()
         {
-            fileManager = FileManager.getInstance();
+            // singleton
+        }
+
+        public static StateManager getInstance()
+        {
+            return stateManager;
+        }
+
+        public void changeState(State state)
+        {
+            this.state = state;
         }
 
         public void start()
         {
-            // nothing to do
+            state.start(this);
+            Debug.WriteLine("state: " + this.state.stateName);
         }
-        
+
         public void pause()
         {
-            // nothing to do
+            state.pause(this);
+            Debug.WriteLine("state: " + this.state.stateName);
         }
 
         public void reset()
         {
-            // nothing to do
+            state.reset(this);
+            Debug.WriteLine("state: " + this.state.stateName);
         }
+    }
+
+    interface State
+    {
+        string stateName
+        {
+            get;
+        }
+
+        void start(StateManager stateManager);
+        void pause(StateManager stateManager);
+        void reset(StateManager stateManager);
     }
 
     class PauseState : State
     {
         private static PauseState pauseState = new PauseState();
+        private const string _stateName = "Pause";
 
         private PauseState()
         {
             // singleton pattern
-            // nothing to do
         }
 
         public static PauseState getInstance()
         {
             return pauseState;
         }
+
+        public string stateName
+        {
+            get => _stateName;
+        }
+
+        public void start(StateManager stateManager)
+        {
+            stateManager.changeState(RunState.getInstance());
+        }
+        public void pause(StateManager stateManager)
+        {
+            // nothing to do
+        }
+
+        public void reset(StateManager stateManager)
+        {
+            // nothing to do
+        }
     }
 
     class RunState : State
     {
         private static RunState runState = new RunState();
+        private const string _stateName = "Run";
 
         private RunState()
         {
@@ -61,21 +109,24 @@ namespace SalaryMeterForWindows
         {
             return runState;
         }
-    }
 
-    class ResetState : State
-    {
-        private static ResetState resetState = new ResetState();
-
-        private ResetState()
+        public string stateName
         {
-            // singleton pattern
-            // nothing to do
+            get => _stateName;
         }
 
-        public static ResetState getInstance()
+        public void start(StateManager stateManager)
         {
-            return resetState;
+            // nothing to do
+        }
+        public void pause(StateManager stateManager)
+        {
+            stateManager.changeState(PauseState.getInstance());
+        }
+
+        public void reset(StateManager stateManager)
+        {
+            stateManager.changeState(PauseState.getInstance());
         }
     }
 }
