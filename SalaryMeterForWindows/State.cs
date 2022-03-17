@@ -12,7 +12,7 @@ namespace SalaryMeterForWindows
         private static StateManager stateManager = new StateManager();
 
         private State state = PauseState.getInstance();
-        private Timer timer = Timer.getInstance();
+        private Timer timer = new Timer();
 
         private StateManager()
         {

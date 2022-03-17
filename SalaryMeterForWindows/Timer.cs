@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Diagnostics;
 
 namespace SalaryMeterForWindows
 {
     class Timer
     {
-        private static Timer timer = new Timer();
-
         private CountUp countUp = null;
+        private Thread thread = null;
 
-        private Timer()
+        public Timer()
         {
-            // singleton pattern
-            // nothing to do
+            thread = new Thread(new ThreadStart(threadEntry));
         }
 
-        public static Timer getInstance()
+        private void threadEntry()
         {
-            return timer;
+            while (true)
+            {
+                DateTime dt = DateTime.Now;
+                Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
+
+                Thread.Sleep(1000);
+            }
         }
 
         public void changeALgorithm()
@@ -30,7 +36,7 @@ namespace SalaryMeterForWindows
 
         public void start()
         {
-
+            thread.Start();
         }
 
         public void pause()
@@ -51,17 +57,19 @@ namespace SalaryMeterForWindows
 
     interface CountUp
     {
+
     }
 
     /* ------------------------------------------------------
      *  Write the count up algorithms below if you wan to add.
      * ------------------------------------------------------*/ 
-
     class CountUpAlgorithm1 : CountUp
     {
+
     }
 
     class CountUpAlgorithm2 : CountUp
     {
+
     }
 }
