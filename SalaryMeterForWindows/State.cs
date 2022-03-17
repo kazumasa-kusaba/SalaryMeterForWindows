@@ -12,6 +12,7 @@ namespace SalaryMeterForWindows
         private static StateManager stateManager = new StateManager();
 
         private State state = PauseState.getInstance();
+        private Timer timer = Timer.getInstance();
 
         private StateManager()
         {
@@ -21,11 +22,6 @@ namespace SalaryMeterForWindows
         public static StateManager getInstance()
         {
             return stateManager;
-        }
-
-        public void changeState(State state)
-        {
-            this.state = state;
         }
 
         public void start()
@@ -44,6 +40,31 @@ namespace SalaryMeterForWindows
         {
             state.reset(this);
             Debug.WriteLine("state: " + this.state.stateName);
+        }
+
+        public void changeState(State state)
+        {
+            this.state = state;
+        }
+
+        public void startTimer()
+        {
+            timer.start();
+        }
+
+        public void pauseTimer()
+        {
+            timer.pause();
+        }
+
+        public void stopTimer()
+        {
+            timer.stop();
+        }
+
+        public void resetTimer()
+        {
+            timer.reset();
         }
     }
 
@@ -81,6 +102,7 @@ namespace SalaryMeterForWindows
 
         public void start(StateManager stateManager)
         {
+            stateManager.startTimer();
             stateManager.changeState(RunState.getInstance());
         }
         public void pause(StateManager stateManager)
@@ -121,11 +143,13 @@ namespace SalaryMeterForWindows
         }
         public void pause(StateManager stateManager)
         {
+            stateManager.pauseTimer();
             stateManager.changeState(PauseState.getInstance());
         }
 
         public void reset(StateManager stateManager)
         {
+            stateManager.resetTimer();
             stateManager.changeState(PauseState.getInstance());
         }
     }
