@@ -11,23 +11,35 @@ namespace SalaryMeterForWindows
 {
     class Timer
     {
-        private CountUp countUp = null;
-        private Action<uint> counterCallback = null;
+        private Action<uint> totalSalaryCallback = null;
         System.Timers.Timer timer = null;
-
-        // DEBUG:
-        private uint temp = 0;
+        private struct SalaryInformation
+        {
+            public uint totalSalary;
+            public uint elapsedTimeSec;
+            public uint salaryPerHour;
+        }
+        private SalaryInformation salaryInformation = new SalaryInformation();
 
         public Timer()
         {
             timer = new System.Timers.Timer(1000);
             timer.Elapsed += onTimedEvent;
             timer.AutoReset = true;
+
+            salaryInformation.totalSalary = 0;
+            salaryInformation.elapsedTimeSec = 0;
+            salaryInformation.salaryPerHour = 0;
         }
 
-        public void setCounterCallback(Action<uint> callback)
+        public void setTotalSalaryCallback(Action<uint> callback)
         {
-            this.counterCallback = callback;
+            this.totalSalaryCallback = callback;
+        }
+
+        public void setElapsedTimeSec(uint timeSec)
+        {
+            salaryInformation.elapsedTimeSec = timeSec;
         }
 
         public void start()
@@ -43,47 +55,35 @@ namespace SalaryMeterForWindows
         public void stop()
         {
             timer.Enabled = false;
-            temp = 0;
-            counterCallback(0);
+            salaryInformation.totalSalary = 0;
+            salaryInformation.elapsedTimeSec = 0;
+            totalSalaryCallback(0);
         }
 
         public void reset()
         {
             timer.Enabled = false;
-            temp = 0;
-            counterCallback(0);
-        }
-
-        public void changeALgorithm()
-        {
-
+            salaryInformation.totalSalary = 0;
+            salaryInformation.elapsedTimeSec = 0;
+            totalSalaryCallback(0);
         }
 
         private void onTimedEvent(Object source, ElapsedEventArgs e)
         {
+            // DEBUG:
             DateTime dt = DateTime.Now;
             Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
 
-            counterCallback(temp);
-            temp += 1;
+            // CAUTION: the accuracy is not considered at all...
+            salaryInformation.totalSalary += salaryInformation.salaryPerHour / 60;
+
+            salaryInformation.elapsedTimeSec += 1;
+
+            // notify the total salary
+            if (totalSalaryCallback != null)
+            {
+                totalSalaryCallback(salaryInformation.totalSalary);
+            }
         }
-    }
-
-    interface CountUp
-    {
-
-    }
-
-    /* ------------------------------------------------------
-     *  Write the count up algorithms below if you wan to add.
-     * ------------------------------------------------------*/ 
-    class CountUpAlgorithm1 : CountUp
-    {
-
-    }
-
-    class CountUpAlgorithm2 : CountUp
-    {
-
     }
 }

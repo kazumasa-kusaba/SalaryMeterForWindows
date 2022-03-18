@@ -24,9 +24,9 @@ namespace SalaryMeterForWindows
             return stateManager;
         }
 
-        public void setCounterCallback(Action<uint> callback)
+        public void setTotalSalaryCallback(Action<uint> callback)
         {
-            timer.setCounterCallback(callback);
+            timer.setTotalSalaryCallback(callback);
         }
 
         public void start()

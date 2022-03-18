@@ -43,7 +43,6 @@ namespace SalaryMeterForWindows
             this.labelComma1 = new System.Windows.Forms.Label();
             this.labelComma2 = new System.Windows.Forms.Label();
             this.labelYen = new System.Windows.Forms.Label();
-            this.labelMode = new System.Windows.Forms.Label();
             this.labelNumber9 = new System.Windows.Forms.Label();
             this.labelElapsedTime = new System.Windows.Forms.Label();
             this.labelSalary = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@ namespace SalaryMeterForWindows
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -225,16 +223,6 @@ namespace SalaryMeterForWindows
             this.labelYen.TabIndex = 11;
             this.labelYen.Text = "yen";
             // 
-            // labelMode
-            // 
-            this.labelMode.AutoSize = true;
-            this.labelMode.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelMode.Location = new System.Drawing.Point(28, 206);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(141, 28);
-            this.labelMode.TabIndex = 12;
-            this.labelMode.Text = "Mode: XXX";
-            // 
             // labelNumber9
             // 
             this.labelNumber9.AutoSize = true;
@@ -253,7 +241,7 @@ namespace SalaryMeterForWindows
             // 
             this.labelElapsedTime.AutoSize = true;
             this.labelElapsedTime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelElapsedTime.Location = new System.Drawing.Point(200, 206);
+            this.labelElapsedTime.Location = new System.Drawing.Point(28, 201);
             this.labelElapsedTime.Name = "labelElapsedTime";
             this.labelElapsedTime.Size = new System.Drawing.Size(258, 28);
             this.labelElapsedTime.TabIndex = 14;
@@ -263,7 +251,7 @@ namespace SalaryMeterForWindows
             // 
             this.labelSalary.AutoSize = true;
             this.labelSalary.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSalary.Location = new System.Drawing.Point(489, 206);
+            this.labelSalary.Location = new System.Drawing.Point(317, 201);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(228, 28);
             this.labelSalary.TabIndex = 15;
@@ -316,7 +304,6 @@ namespace SalaryMeterForWindows
             this.Controls.Add(this.labelSalary);
             this.Controls.Add(this.labelElapsedTime);
             this.Controls.Add(this.labelNumber9);
-            this.Controls.Add(this.labelMode);
             this.Controls.Add(this.labelNumber3);
             this.Controls.Add(this.labelYen);
             this.Controls.Add(this.labelComma2);
@@ -356,7 +343,6 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.Label labelComma1;
         private System.Windows.Forms.Label labelComma2;
         private System.Windows.Forms.Label labelYen;
-        private System.Windows.Forms.Label labelMode;
         private System.Windows.Forms.Label labelNumber9;
         private System.Windows.Forms.Label labelElapsedTime;
         private System.Windows.Forms.Label labelSalary;

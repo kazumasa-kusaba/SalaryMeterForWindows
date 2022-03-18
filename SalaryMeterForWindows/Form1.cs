@@ -24,7 +24,7 @@ namespace SalaryMeterForWindows
                 labelNumber4, labelNumber5, labelNumber6, 
                 labelNumber7, labelNumber8, labelNumber9 };
 
-            stateManager.setCounterCallback(updateNumbersCallback);
+            stateManager.setTotalSalaryCallback(updateNumbersCallback);
         }
 
         ~MainForm()
@@ -47,13 +47,13 @@ namespace SalaryMeterForWindows
             stateManager.reset();
         }
 
-        private void updateNumbersCallback(uint val)
+        private void updateNumbersCallback(uint totalSalary)
         {
             Action action = delegate
             {
                 uint[] numberVals = new uint[labelNumbers.Length];
 
-                if (val >= 999999999)
+                if (totalSalary >= 999999999)
                 {
                     for (int i = 0; i < numberVals.Length; i++)
                     {
@@ -64,8 +64,8 @@ namespace SalaryMeterForWindows
 
                 for (int i = 0; i < numberVals.Length; i++)
                 {
-                    labelNumbers[i].Text = (val % 10).ToString();
-                    val /= 10;
+                    labelNumbers[i].Text = (totalSalary % 10).ToString();
+                    totalSalary /= 10;
                 }
             };
 
