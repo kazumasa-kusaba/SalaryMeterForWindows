@@ -33,7 +33,7 @@ namespace SalaryMeterForWindows
             salaryInformation.salaryPerHour = 0;
             */
             // DEBUG:
-            salaryInformation.elapsedTimeSec = 4322;
+            salaryInformation.elapsedTimeSec = 60 * 60;
             salaryInformation.salaryPerHour = 2343;
         }
 
