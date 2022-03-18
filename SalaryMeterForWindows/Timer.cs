@@ -17,7 +17,6 @@ namespace SalaryMeterForWindows
         System.Timers.Timer timer = null;
         private struct SalaryInformation
         {
-            public uint totalSalary;
             public uint elapsedTimeSec;
             public uint salaryPerHour;
         }
@@ -29,9 +28,13 @@ namespace SalaryMeterForWindows
             timer.Elapsed += onTimedEvent;
             timer.AutoReset = true;
 
-            salaryInformation.totalSalary = 0;
+            /*
             salaryInformation.elapsedTimeSec = 0;
             salaryInformation.salaryPerHour = 0;
+            */
+            // DEBUG:
+            salaryInformation.elapsedTimeSec = 4322;
+            salaryInformation.salaryPerHour = 2343;
         }
 
         public void setTotalSalaryCallback(Action<uint> callback)
@@ -67,17 +70,17 @@ namespace SalaryMeterForWindows
         public void stop()
         {
             timer.Enabled = false;
-            salaryInformation.totalSalary = 0;
             salaryInformation.elapsedTimeSec = 0;
             totalSalaryCallback(0);
+            elapsedTimeSecCallback(0);
         }
 
         public void reset()
         {
             timer.Enabled = false;
-            salaryInformation.totalSalary = 0;
             salaryInformation.elapsedTimeSec = 0;
             totalSalaryCallback(0);
+            elapsedTimeSecCallback(0);
         }
 
         private void onTimedEvent(Object source, ElapsedEventArgs e)
@@ -86,15 +89,14 @@ namespace SalaryMeterForWindows
             DateTime dt = DateTime.Now;
             Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
 
-            // CAUTION: the accuracy is not considered at all...
-            salaryInformation.totalSalary += salaryInformation.salaryPerHour / 60;
-
             salaryInformation.elapsedTimeSec += 1;
+
+            uint totalSalary = (uint)(salaryInformation.salaryPerHour / 3600.0 * salaryInformation.elapsedTimeSec);
 
             // notify the total salary
             if (totalSalaryCallback != null)
             {
-                totalSalaryCallback(salaryInformation.totalSalary);
+                totalSalaryCallback(totalSalary);
             }
 
             // notify the elapsed time
