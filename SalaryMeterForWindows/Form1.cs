@@ -25,11 +25,8 @@ namespace SalaryMeterForWindows
                 labelNumber7, labelNumber8, labelNumber9 };
 
             stateManager.setTotalSalaryCallback(updateNumbersCallback);
-        }
-
-        ~MainForm()
-        {
-
+            stateManager.setElapsedTimeSecCallback(updateElapsedTime);
+            stateManager.setSalaryPerHourCallback(updateSalaryPerHour);
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -67,6 +64,29 @@ namespace SalaryMeterForWindows
                     labelNumbers[i].Text = (totalSalary % 10).ToString();
                     totalSalary /= 10;
                 }
+            };
+
+            Invoke(action);
+        }
+        private void updateElapsedTime(uint elapsedTimeSec)
+        {
+            Action action = delegate
+            {
+                String title = "Elapsed Time: ";
+                uint hour = elapsedTimeSec / 3600;
+                uint min = elapsedTimeSec % 3600;
+
+                labelElapsedTime.Text = "Elapsed Time: " + hour.ToString() + ":" + min.ToString();
+            };
+
+            Invoke(action);
+        }
+
+        private void updateSalaryPerHour(uint salaryPerHour)
+        {
+            Action action = delegate
+            {
+                // TODO: write here
             };
 
             Invoke(action);

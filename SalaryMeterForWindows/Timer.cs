@@ -12,6 +12,8 @@ namespace SalaryMeterForWindows
     class Timer
     {
         private Action<uint> totalSalaryCallback = null;
+        private Action<uint> elapsedTimeSecCallback = null;
+        private Action<uint> salaryPerHourCallback = null;
         System.Timers.Timer timer = null;
         private struct SalaryInformation
         {
@@ -35,6 +37,16 @@ namespace SalaryMeterForWindows
         public void setTotalSalaryCallback(Action<uint> callback)
         {
             this.totalSalaryCallback = callback;
+        }
+
+        public void setElapsedTimeSecCallback(Action<uint> callback)
+        {
+            this.elapsedTimeSecCallback = callback;
+        }
+
+        public void setSalaryPerHourCallback(Action<uint> callback)
+        {
+            this.salaryPerHourCallback = callback;
         }
 
         public void setElapsedTimeSec(uint timeSec)
@@ -83,6 +95,18 @@ namespace SalaryMeterForWindows
             if (totalSalaryCallback != null)
             {
                 totalSalaryCallback(salaryInformation.totalSalary);
+            }
+
+            // notify the elapsed time
+            if (elapsedTimeSecCallback != null)
+            {
+                elapsedTimeSecCallback(salaryInformation.elapsedTimeSec);
+            }
+
+            // notify the salary per hour
+            if (salaryPerHourCallback != null)
+            {
+                salaryPerHourCallback(salaryInformation.salaryPerHour);
             }
         }
     }

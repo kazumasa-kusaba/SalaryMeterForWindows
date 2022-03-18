@@ -29,6 +29,16 @@ namespace SalaryMeterForWindows
             timer.setTotalSalaryCallback(callback);
         }
 
+        public void setElapsedTimeSecCallback(Action<uint> callback)
+        {
+            timer.setElapsedTimeSecCallback(callback);
+        }
+
+        public void setSalaryPerHourCallback(Action<uint> callback)
+        {
+            timer.setSalaryPerHourCallback(callback);
+        }
+
         public void start()
         {
             state.start(this);
