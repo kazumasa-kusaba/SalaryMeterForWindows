@@ -45,7 +45,7 @@ namespace SalaryMeterForWindows
             this.labelYen = new System.Windows.Forms.Label();
             this.labelNumber9 = new System.Windows.Forms.Label();
             this.labelElapsedTime = new System.Windows.Forms.Label();
-            this.labelSalary = new System.Windows.Forms.Label();
+            this.labelSalaryPerHour = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@ namespace SalaryMeterForWindows
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -243,19 +244,19 @@ namespace SalaryMeterForWindows
             this.labelElapsedTime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelElapsedTime.Location = new System.Drawing.Point(28, 201);
             this.labelElapsedTime.Name = "labelElapsedTime";
-            this.labelElapsedTime.Size = new System.Drawing.Size(258, 28);
+            this.labelElapsedTime.Size = new System.Drawing.Size(280, 28);
             this.labelElapsedTime.TabIndex = 14;
-            this.labelElapsedTime.Text = "Elapsed Time: XX:XX";
+            this.labelElapsedTime.Text = "Elapsed Time: 00:00:00";
             // 
-            // labelSalary
+            // labelSalaryPerHour
             // 
-            this.labelSalary.AutoSize = true;
-            this.labelSalary.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSalary.Location = new System.Drawing.Point(317, 201);
-            this.labelSalary.Name = "labelSalary";
-            this.labelSalary.Size = new System.Drawing.Size(228, 28);
-            this.labelSalary.TabIndex = 15;
-            this.labelSalary.Text = "Salary: XXX yen/h";
+            this.labelSalaryPerHour.AutoSize = true;
+            this.labelSalaryPerHour.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSalaryPerHour.Location = new System.Drawing.Point(354, 201);
+            this.labelSalaryPerHour.Name = "labelSalaryPerHour";
+            this.labelSalaryPerHour.Size = new System.Drawing.Size(191, 28);
+            this.labelSalaryPerHour.TabIndex = 15;
+            this.labelSalaryPerHour.Text = "Salary: 0 yen/h";
             // 
             // buttonStart
             // 
@@ -301,7 +302,7 @@ namespace SalaryMeterForWindows
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonStart);
-            this.Controls.Add(this.labelSalary);
+            this.Controls.Add(this.labelSalaryPerHour);
             this.Controls.Add(this.labelElapsedTime);
             this.Controls.Add(this.labelNumber9);
             this.Controls.Add(this.labelNumber3);
@@ -345,7 +346,7 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.Label labelYen;
         private System.Windows.Forms.Label labelNumber9;
         private System.Windows.Forms.Label labelElapsedTime;
-        private System.Windows.Forms.Label labelSalary;
+        private System.Windows.Forms.Label labelSalaryPerHour;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonPause;
         private System.Windows.Forms.Button buttonReset;
