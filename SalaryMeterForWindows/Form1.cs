@@ -27,6 +27,11 @@ namespace SalaryMeterForWindows
             stateManager.setCounterCallback(updateNumbersCallback);
         }
 
+        ~MainForm()
+        {
+
+        }
+
         private void buttonStart_Click(object sender, EventArgs e)
         {
             stateManager.start();

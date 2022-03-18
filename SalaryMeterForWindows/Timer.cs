@@ -5,23 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Diagnostics;
+using System.Timers;
 
 namespace SalaryMeterForWindows
 {
     class Timer
     {
         private CountUp countUp = null;
-        private Thread thread = null;
         private Action<uint> counterCallback = null;
+        System.Timers.Timer timer = null;
+
+        // DEBUG:
+        private uint temp = 0;
 
         public Timer()
         {
-            thread = new Thread(new ThreadStart(threadEntry));
-        }
-
-        ~Timer()
-        {
-
+            timer = new System.Timers.Timer(1000);
+            timer.Elapsed += onTimedEvent;
+            timer.AutoReset = true;
         }
 
         public void setCounterCallback(Action<uint> callback)
@@ -31,22 +32,26 @@ namespace SalaryMeterForWindows
 
         public void start()
         {
-            thread.Start();
+            timer.Enabled = true;
         }
 
         public void pause()
         {
-
+            timer.Enabled = false;
         }
 
         public void stop()
         {
-
+            timer.Enabled = false;
+            temp = 0;
+            counterCallback(0);
         }
 
         public void reset()
         {
-
+            timer.Enabled = false;
+            temp = 0;
+            counterCallback(0);
         }
 
         public void changeALgorithm()
@@ -54,21 +59,13 @@ namespace SalaryMeterForWindows
 
         }
 
-        private void threadEntry()
+        private void onTimedEvent(Object source, ElapsedEventArgs e)
         {
-            uint temp = 0;
+            DateTime dt = DateTime.Now;
+            Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
 
-            while (true)
-            {
-                this.counterCallback(temp);
-
-                DateTime dt = DateTime.Now;
-                Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
-
-                Thread.Sleep(1000);
-
-                temp += 1;
-            }
+            counterCallback(temp);
+            temp += 1;
         }
     }
 

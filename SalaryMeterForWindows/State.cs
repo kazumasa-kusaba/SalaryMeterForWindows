@@ -117,7 +117,7 @@ namespace SalaryMeterForWindows
 
         public void reset(StateManager stateManager)
         {
-            // nothing to do
+            stateManager.resetTimer();
         }
     }
 
