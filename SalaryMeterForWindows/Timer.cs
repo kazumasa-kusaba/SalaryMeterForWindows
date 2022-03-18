@@ -12,6 +12,7 @@ namespace SalaryMeterForWindows
     {
         private CountUp countUp = null;
         private Thread thread = null;
+        private Action<uint> counterCallback = null;
 
         public Timer()
         {
@@ -23,20 +24,9 @@ namespace SalaryMeterForWindows
 
         }
 
-        private void threadEntry()
+        public void setCounterCallback(Action<uint> callback)
         {
-            while (true)
-            {
-                DateTime dt = DateTime.Now;
-                Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
-
-                Thread.Sleep(1000);
-            }
-        }
-
-        public void changeALgorithm()
-        {
-
+            this.counterCallback = callback;
         }
 
         public void start()
@@ -57,6 +47,28 @@ namespace SalaryMeterForWindows
         public void reset()
         {
 
+        }
+
+        public void changeALgorithm()
+        {
+
+        }
+
+        private void threadEntry()
+        {
+            uint temp = 0;
+
+            while (true)
+            {
+                this.counterCallback(temp);
+
+                DateTime dt = DateTime.Now;
+                Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
+
+                Thread.Sleep(1000);
+
+                temp += 1;
+            }
         }
     }
 
