@@ -13,10 +13,16 @@ namespace SalaryMeterForWindows
     public partial class MainForm : Form
     {
         private StateManager stateManager = StateManager.getInstance();
+        private Label[] labelNumbers;
 
         public MainForm()
         {
             InitializeComponent();
+
+            labelNumbers = new Label[] { 
+                labelNumber1, labelNumber2, labelNumber3, 
+                labelNumber4, labelNumber5, labelNumber6, 
+                labelNumber7, labelNumber8, labelNumber9 };
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -32,6 +38,26 @@ namespace SalaryMeterForWindows
         private void buttonReset_Click(object sender, EventArgs e)
         {
             stateManager.reset();
+        }
+
+        private void udpateNumbersCallback(uint val)
+        {
+            uint[] numberVals = new uint[labelNumbers.Length];
+
+            if (val >= 999999999)
+            {
+                for (int i = 0; i < numberVals.Length; i++)
+                {
+                    labelNumbers[i].Text = "9";
+                }
+                return;
+            }
+
+            for (int i = 0; i < numberVals.Length; i++)
+            {
+                labelNumbers[i].Text = (val % 10).ToString();
+                val /= 10;
+            }
         }
     }
 }

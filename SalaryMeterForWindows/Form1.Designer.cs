@@ -44,7 +44,7 @@ namespace SalaryMeterForWindows
             this.labelComma2 = new System.Windows.Forms.Label();
             this.labelYen = new System.Windows.Forms.Label();
             this.labelMode = new System.Windows.Forms.Label();
-            this.label1Number9 = new System.Windows.Forms.Label();
+            this.labelNumber9 = new System.Windows.Forms.Label();
             this.labelElapsedTime = new System.Windows.Forms.Label();
             this.labelSalary = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
@@ -235,19 +235,19 @@ namespace SalaryMeterForWindows
             this.labelMode.TabIndex = 12;
             this.labelMode.Text = "Mode: XXX";
             // 
-            // label1Number9
+            // labelNumber9
             // 
-            this.label1Number9.AutoSize = true;
-            this.label1Number9.BackColor = System.Drawing.Color.Transparent;
-            this.label1Number9.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1Number9.Location = new System.Drawing.Point(25, 55);
-            this.label1Number9.MaximumSize = new System.Drawing.Size(80, 130);
-            this.label1Number9.MinimumSize = new System.Drawing.Size(80, 130);
-            this.label1Number9.Name = "label1Number9";
-            this.label1Number9.Size = new System.Drawing.Size(80, 130);
-            this.label1Number9.TabIndex = 13;
-            this.label1Number9.Text = "0";
-            this.label1Number9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelNumber9.AutoSize = true;
+            this.labelNumber9.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumber9.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelNumber9.Location = new System.Drawing.Point(25, 55);
+            this.labelNumber9.MaximumSize = new System.Drawing.Size(80, 130);
+            this.labelNumber9.MinimumSize = new System.Drawing.Size(80, 130);
+            this.labelNumber9.Name = "labelNumber9";
+            this.labelNumber9.Size = new System.Drawing.Size(80, 130);
+            this.labelNumber9.TabIndex = 13;
+            this.labelNumber9.Text = "0";
+            this.labelNumber9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelElapsedTime
             // 
@@ -315,7 +315,7 @@ namespace SalaryMeterForWindows
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelSalary);
             this.Controls.Add(this.labelElapsedTime);
-            this.Controls.Add(this.label1Number9);
+            this.Controls.Add(this.labelNumber9);
             this.Controls.Add(this.labelMode);
             this.Controls.Add(this.labelNumber3);
             this.Controls.Add(this.labelYen);
@@ -357,7 +357,7 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.Label labelComma2;
         private System.Windows.Forms.Label labelYen;
         private System.Windows.Forms.Label labelMode;
-        private System.Windows.Forms.Label label1Number9;
+        private System.Windows.Forms.Label labelNumber9;
         private System.Windows.Forms.Label labelElapsedTime;
         private System.Windows.Forms.Label labelSalary;
         private System.Windows.Forms.Button buttonStart;

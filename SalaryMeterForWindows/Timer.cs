@@ -18,6 +18,11 @@ namespace SalaryMeterForWindows
             thread = new Thread(new ThreadStart(threadEntry));
         }
 
+        ~Timer()
+        {
+
+        }
+
         private void threadEntry()
         {
             while (true)
