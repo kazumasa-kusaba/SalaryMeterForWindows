@@ -59,6 +59,11 @@ namespace SalaryMeterForWindows
             // numericUpDownSalaryPerHour
             // 
             this.numericUpDownSalaryPerHour.Location = new System.Drawing.Point(212, 30);
+            this.numericUpDownSalaryPerHour.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.numericUpDownSalaryPerHour.MaximumSize = new System.Drawing.Size(130, 0);
             this.numericUpDownSalaryPerHour.MinimumSize = new System.Drawing.Size(130, 0);
             this.numericUpDownSalaryPerHour.Name = "numericUpDownSalaryPerHour";

@@ -11,7 +11,7 @@ namespace SalaryMeterForWindows
     {
         private static StateManager stateManager = new StateManager();
 
-        private State state = PauseState.getInstance();
+        private State state = WaitSetting.getInstance();
         private Timer timer = new Timer();
 
         private StateManager()
@@ -98,6 +98,42 @@ namespace SalaryMeterForWindows
         void start(StateManager stateManager);
         void pause(StateManager stateManager);
         void reset(StateManager stateManager);
+    }
+
+    class WaitSetting : State
+    {
+        private static WaitSetting waitSetting = new WaitSetting();
+        private const string _stateName = "WaitSetting";
+
+        public static WaitSetting getInstance()
+        {
+            return waitSetting;
+        }
+
+        public string stateName
+        {
+            get => _stateName;
+        }
+
+        public void start(StateManager stateManager)
+        {
+            SettingForm settingForm = new SettingForm();
+            if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.startTimer();
+                stateManager.changeState(RunState.getInstance());
+            }
+        }
+        public void pause(StateManager stateManager)
+        {
+            // nothing to do
+        }
+
+        public void reset(StateManager stateManager)
+        {
+            stateManager.resetTimer();
+        }
     }
 
     class PauseState : State

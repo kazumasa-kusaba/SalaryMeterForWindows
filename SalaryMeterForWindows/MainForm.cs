@@ -32,10 +32,6 @@ namespace SalaryMeterForWindows
         private void buttonStart_Click(object sender, EventArgs e)
         {
             stateManager.start();
-
-            // DEBUG:
-            Form settingForm = new SettingForm();
-            settingForm.ShowDialog(this);
         }
 
         private void buttonPause_Click(object sender, EventArgs e)
