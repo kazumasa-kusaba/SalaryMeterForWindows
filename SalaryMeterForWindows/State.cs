@@ -39,11 +39,6 @@ namespace SalaryMeterForWindows
             timer.setSalaryPerHourCallback(callback);
         }
 
-        public void setElapsedTimeSec(uint elapsedTimeSec)
-        {
-            timer.setElapsedTimeSec(elapsedTimeSec);
-        }
-
         public void setSalaryPerHour(uint salaryPerHour)
         {
             timer.setSalaryPerHour(salaryPerHour);

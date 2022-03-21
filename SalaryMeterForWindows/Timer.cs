@@ -53,11 +53,6 @@ namespace SalaryMeterForWindows
             this.salaryPerHourCallback = callback;
         }
 
-        public void setElapsedTimeSec(uint elapsedTimeSec)
-        {
-            salaryInformation.elapsedTimeSec = elapsedTimeSec;
-        }
-
         public void setSalaryPerHour(uint salaryPerHour)
         {
             salaryInformation.salaryPerHour = salaryPerHour;
