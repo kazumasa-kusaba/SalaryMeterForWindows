@@ -28,13 +28,14 @@ namespace SalaryMeterForWindows
             timer.Elapsed += onTimedEvent;
             timer.AutoReset = true;
 
-            /*
             salaryInformation.elapsedTimeSec = 0;
             salaryInformation.salaryPerHour = 0;
-            */
+
+            /*
             // DEBUG:
             salaryInformation.elapsedTimeSec = 60 * 60;
             salaryInformation.salaryPerHour = 2343;
+            */
         }
 
         public void setTotalSalaryCallback(Action<uint> callback)
@@ -52,9 +53,14 @@ namespace SalaryMeterForWindows
             this.salaryPerHourCallback = callback;
         }
 
-        public void setElapsedTimeSec(uint timeSec)
+        public void setElapsedTimeSec(uint elapsedTimeSec)
         {
-            salaryInformation.elapsedTimeSec = timeSec;
+            salaryInformation.elapsedTimeSec = elapsedTimeSec;
+        }
+
+        public void setSalaryPerHour(uint salaryPerHour)
+        {
+            salaryInformation.salaryPerHour = salaryPerHour;
         }
 
         public void start()
