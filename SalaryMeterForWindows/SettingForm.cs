@@ -17,6 +17,9 @@ namespace SalaryMeterForWindows
         public SettingForm()
         {
             InitializeComponent();
+
+            // Set the cursor to the most right
+            numericUpDownSalaryPerHour.Select(numericUpDownSalaryPerHour.Value.ToString().Length, 0);
         }
 
         public uint salaryPerHour
