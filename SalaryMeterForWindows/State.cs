@@ -62,6 +62,12 @@ namespace SalaryMeterForWindows
             Debug.WriteLine("state: " + this.state.stateName);
         }
 
+        public void setSalary()
+        {
+            state.setSalary(this);
+            Debug.WriteLine("state: " + this.state.stateName);
+        }
+
         public void changeState(State state)
         {
             this.state = state;
@@ -98,6 +104,7 @@ namespace SalaryMeterForWindows
         void start(StateManager stateManager);
         void pause(StateManager stateManager);
         void reset(StateManager stateManager);
+        void setSalary(StateManager stateManager);
     }
 
     class WaitSetting : State
@@ -134,6 +141,17 @@ namespace SalaryMeterForWindows
         {
             stateManager.resetTimer();
         }
+
+        public void setSalary(StateManager stateManager)
+        {
+            SettingForm settingForm = new SettingForm();
+            if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.startTimer();
+                stateManager.changeState(RunState.getInstance());
+            }
+        }
     }
 
     class PauseState : State
@@ -169,6 +187,14 @@ namespace SalaryMeterForWindows
         public void reset(StateManager stateManager)
         {
             stateManager.resetTimer();
+        }
+        public void setSalary(StateManager stateManager)
+        {
+            SettingForm settingForm = new SettingForm();
+            if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+            }
         }
     }
 
@@ -207,6 +233,14 @@ namespace SalaryMeterForWindows
         {
             stateManager.resetTimer();
             stateManager.changeState(PauseState.getInstance());
+        }
+        public void setSalary(StateManager stateManager)
+        {
+            SettingForm settingForm = new SettingForm();
+            if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+            }
         }
     }
 }

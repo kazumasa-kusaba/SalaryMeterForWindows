@@ -101,5 +101,10 @@ namespace SalaryMeterForWindows
         {
             Application.Exit();
         }
+
+        private void setSalaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stateManager.setSalary();
+        }
     }
 }
