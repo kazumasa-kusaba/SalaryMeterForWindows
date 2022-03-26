@@ -141,6 +141,7 @@ namespace SalaryMeterForWindows
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
                 stateManager.startTimer();
+                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
                 stateManager.changeState(RunState.getInstance());
             }
         }
@@ -161,8 +162,6 @@ namespace SalaryMeterForWindows
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
-                stateManager.startTimer();
-                stateManager.changeState(RunState.getInstance());
                 stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
             }
         }
