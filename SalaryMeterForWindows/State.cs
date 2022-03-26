@@ -14,6 +14,8 @@ namespace SalaryMeterForWindows
         private State state = WaitSetting.getInstance();
         private Timer timer = new Timer();
 
+        private Action<uint> salaryPerHourCallback = null;
+
         private StateManager()
         {
             // singleton
@@ -36,6 +38,7 @@ namespace SalaryMeterForWindows
 
         public void setSalaryPerHourCallback(Action<uint> callback)
         {
+            salaryPerHourCallback = callback;
             timer.setSalaryPerHourCallback(callback);
         }
 
@@ -87,10 +90,18 @@ namespace SalaryMeterForWindows
         {
             timer.stop();
         }
-
         public void resetTimer()
         {
             timer.reset();
+        }
+
+        public void updateSalaryPerHour(uint salaryPerHour)
+        {
+            // notify the salary per hour
+            if (salaryPerHourCallback != null)
+            {
+                salaryPerHourCallback(salaryPerHour);
+            }
         }
     }
 
@@ -150,6 +161,7 @@ namespace SalaryMeterForWindows
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
                 stateManager.startTimer();
                 stateManager.changeState(RunState.getInstance());
+                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
             }
         }
     }
@@ -194,6 +206,7 @@ namespace SalaryMeterForWindows
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
             }
         }
     }
@@ -240,6 +253,7 @@ namespace SalaryMeterForWindows
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
             }
         }
     }

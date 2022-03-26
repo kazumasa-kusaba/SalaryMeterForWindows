@@ -14,7 +14,9 @@ namespace SalaryMeterForWindows
         private Action<uint> totalSalaryCallback = null;
         private Action<uint> elapsedTimeSecCallback = null;
         private Action<uint> salaryPerHourCallback = null;
+        
         System.Timers.Timer timer = null;
+
         private struct SalaryInformation
         {
             public uint elapsedTimeSec;
