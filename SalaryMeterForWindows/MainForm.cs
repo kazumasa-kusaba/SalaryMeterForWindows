@@ -96,5 +96,10 @@ namespace SalaryMeterForWindows
 
             Invoke(action);
         }
+
+        private void quitCtrlQToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -49,11 +49,13 @@ namespace SalaryMeterForWindows
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.quitCtrlQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -66,6 +68,8 @@ namespace SalaryMeterForWindows
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quitCtrlQToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 34);
             this.fileToolStripMenuItem.Text = "File(&F)";
@@ -293,6 +297,14 @@ namespace SalaryMeterForWindows
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // quitCtrlQToolStripMenuItem
+            // 
+            this.quitCtrlQToolStripMenuItem.Name = "quitCtrlQToolStripMenuItem";
+            this.quitCtrlQToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.quitCtrlQToolStripMenuItem.Size = new System.Drawing.Size(320, 40);
+            this.quitCtrlQToolStripMenuItem.Text = "Quit(Ctrl+Q)";
+            this.quitCtrlQToolStripMenuItem.Click += new System.EventHandler(this.quitCtrlQToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -351,6 +363,7 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonPause;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.ToolStripMenuItem quitCtrlQToolStripMenuItem;
     }
 }
 
