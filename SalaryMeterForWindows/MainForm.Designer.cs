@@ -31,6 +31,9 @@ namespace SalaryMeterForWindows
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitCtrlQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelNumber8 = new System.Windows.Forms.Label();
             this.labelNumber7 = new System.Windows.Forms.Label();
@@ -49,15 +52,11 @@ namespace SalaryMeterForWindows
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.quitCtrlQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -65,7 +64,7 @@ namespace SalaryMeterForWindows
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1041, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,6 +76,31 @@ namespace SalaryMeterForWindows
             this.fileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 34);
             this.fileToolStripMenuItem.Text = "File(&F)";
+            // 
+            // quitCtrlQToolStripMenuItem
+            // 
+            this.quitCtrlQToolStripMenuItem.Name = "quitCtrlQToolStripMenuItem";
+            this.quitCtrlQToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.quitCtrlQToolStripMenuItem.Size = new System.Drawing.Size(320, 40);
+            this.quitCtrlQToolStripMenuItem.Text = "Quit(Ctrl+Q)";
+            this.quitCtrlQToolStripMenuItem.Click += new System.EventHandler(this.quitCtrlQToolStripMenuItem_Click);
+            // 
+            // editEToolStripMenuItem
+            // 
+            this.editEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setSalaryToolStripMenuItem});
+            this.editEToolStripMenuItem.Name = "editEToolStripMenuItem";
+            this.editEToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+            this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
+            this.editEToolStripMenuItem.Text = "Edit(&E)";
+            // 
+            // setSalaryToolStripMenuItem
+            // 
+            this.setSalaryToolStripMenuItem.Name = "setSalaryToolStripMenuItem";
+            this.setSalaryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.setSalaryToolStripMenuItem.Size = new System.Drawing.Size(360, 40);
+            this.setSalaryToolStripMenuItem.Text = "Set Salary(Ctrl+&E)";
+            this.setSalaryToolStripMenuItem.Click += new System.EventHandler(this.setSalaryToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -118,7 +142,7 @@ namespace SalaryMeterForWindows
             this.labelNumber6.AutoSize = true;
             this.labelNumber6.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber6.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelNumber6.Location = new System.Drawing.Point(335, 55);
+            this.labelNumber6.Location = new System.Drawing.Point(291, 55);
             this.labelNumber6.MaximumSize = new System.Drawing.Size(80, 130);
             this.labelNumber6.MinimumSize = new System.Drawing.Size(80, 130);
             this.labelNumber6.Name = "labelNumber6";
@@ -132,7 +156,7 @@ namespace SalaryMeterForWindows
             this.labelNumber5.AutoSize = true;
             this.labelNumber5.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber5.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelNumber5.Location = new System.Drawing.Point(422, 55);
+            this.labelNumber5.Location = new System.Drawing.Point(378, 55);
             this.labelNumber5.MaximumSize = new System.Drawing.Size(80, 130);
             this.labelNumber5.MinimumSize = new System.Drawing.Size(80, 130);
             this.labelNumber5.Name = "labelNumber5";
@@ -146,7 +170,7 @@ namespace SalaryMeterForWindows
             this.labelNumber4.AutoSize = true;
             this.labelNumber4.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber4.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelNumber4.Location = new System.Drawing.Point(509, 55);
+            this.labelNumber4.Location = new System.Drawing.Point(465, 55);
             this.labelNumber4.MaximumSize = new System.Drawing.Size(80, 130);
             this.labelNumber4.MinimumSize = new System.Drawing.Size(80, 130);
             this.labelNumber4.Name = "labelNumber4";
@@ -160,7 +184,7 @@ namespace SalaryMeterForWindows
             this.labelNumber3.AutoSize = true;
             this.labelNumber3.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber3.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelNumber3.Location = new System.Drawing.Point(645, 55);
+            this.labelNumber3.Location = new System.Drawing.Point(551, 55);
             this.labelNumber3.MaximumSize = new System.Drawing.Size(80, 130);
             this.labelNumber3.MinimumSize = new System.Drawing.Size(80, 130);
             this.labelNumber3.Name = "labelNumber3";
@@ -174,7 +198,7 @@ namespace SalaryMeterForWindows
             this.labelNumber2.AutoSize = true;
             this.labelNumber2.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber2.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelNumber2.Location = new System.Drawing.Point(732, 55);
+            this.labelNumber2.Location = new System.Drawing.Point(638, 55);
             this.labelNumber2.MaximumSize = new System.Drawing.Size(80, 130);
             this.labelNumber2.MinimumSize = new System.Drawing.Size(80, 130);
             this.labelNumber2.Name = "labelNumber2";
@@ -188,7 +212,7 @@ namespace SalaryMeterForWindows
             this.labelNumber1.AutoSize = true;
             this.labelNumber1.BackColor = System.Drawing.Color.Transparent;
             this.labelNumber1.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelNumber1.Location = new System.Drawing.Point(819, 55);
+            this.labelNumber1.Location = new System.Drawing.Point(725, 55);
             this.labelNumber1.MaximumSize = new System.Drawing.Size(80, 130);
             this.labelNumber1.MinimumSize = new System.Drawing.Size(80, 130);
             this.labelNumber1.Name = "labelNumber1";
@@ -202,7 +226,7 @@ namespace SalaryMeterForWindows
             this.labelComma1.AutoSize = true;
             this.labelComma1.BackColor = System.Drawing.Color.Transparent;
             this.labelComma1.Font = new System.Drawing.Font("MS UI Gothic", 27.85714F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelComma1.Location = new System.Drawing.Point(596, 119);
+            this.labelComma1.Location = new System.Drawing.Point(523, 135);
             this.labelComma1.Name = "labelComma1";
             this.labelComma1.Size = new System.Drawing.Size(42, 65);
             this.labelComma1.TabIndex = 9;
@@ -214,7 +238,7 @@ namespace SalaryMeterForWindows
             this.labelComma2.AutoSize = true;
             this.labelComma2.BackColor = System.Drawing.Color.Transparent;
             this.labelComma2.Font = new System.Drawing.Font("MS UI Gothic", 27.85714F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelComma2.Location = new System.Drawing.Point(286, 119);
+            this.labelComma2.Location = new System.Drawing.Point(256, 135);
             this.labelComma2.Name = "labelComma2";
             this.labelComma2.Size = new System.Drawing.Size(42, 65);
             this.labelComma2.TabIndex = 10;
@@ -226,7 +250,7 @@ namespace SalaryMeterForWindows
             this.labelYen.AutoSize = true;
             this.labelYen.BackColor = System.Drawing.Color.Transparent;
             this.labelYen.Font = new System.Drawing.Font("MS UI Gothic", 20.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelYen.Location = new System.Drawing.Point(906, 135);
+            this.labelYen.Location = new System.Drawing.Point(812, 135);
             this.labelYen.Name = "labelYen";
             this.labelYen.Size = new System.Drawing.Size(94, 48);
             this.labelYen.TabIndex = 11;
@@ -250,7 +274,7 @@ namespace SalaryMeterForWindows
             // 
             this.labelElapsedTime.AutoSize = true;
             this.labelElapsedTime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelElapsedTime.Location = new System.Drawing.Point(28, 201);
+            this.labelElapsedTime.Location = new System.Drawing.Point(586, 245);
             this.labelElapsedTime.Name = "labelElapsedTime";
             this.labelElapsedTime.Size = new System.Drawing.Size(280, 28);
             this.labelElapsedTime.TabIndex = 14;
@@ -260,7 +284,7 @@ namespace SalaryMeterForWindows
             // 
             this.labelSalaryPerHour.AutoSize = true;
             this.labelSalaryPerHour.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSalaryPerHour.Location = new System.Drawing.Point(354, 201);
+            this.labelSalaryPerHour.Location = new System.Drawing.Point(586, 217);
             this.labelSalaryPerHour.Name = "labelSalaryPerHour";
             this.labelSalaryPerHour.Size = new System.Drawing.Size(191, 28);
             this.labelSalaryPerHour.TabIndex = 15;
@@ -270,9 +294,9 @@ namespace SalaryMeterForWindows
             // 
             this.buttonStart.AutoSize = true;
             this.buttonStart.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonStart.Location = new System.Drawing.Point(33, 264);
+            this.buttonStart.Location = new System.Drawing.Point(29, 221);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(163, 52);
+            this.buttonStart.Size = new System.Drawing.Size(156, 52);
             this.buttonStart.TabIndex = 16;
             this.buttonStart.Text = "START";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -282,9 +306,9 @@ namespace SalaryMeterForWindows
             // 
             this.buttonPause.AutoSize = true;
             this.buttonPause.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonPause.Location = new System.Drawing.Point(223, 264);
+            this.buttonPause.Location = new System.Drawing.Point(209, 221);
             this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(163, 52);
+            this.buttonPause.Size = new System.Drawing.Size(157, 52);
             this.buttonPause.TabIndex = 17;
             this.buttonPause.Text = "PAUSE";
             this.buttonPause.UseVisualStyleBackColor = true;
@@ -294,44 +318,22 @@ namespace SalaryMeterForWindows
             // 
             this.buttonReset.AutoSize = true;
             this.buttonReset.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonReset.Location = new System.Drawing.Point(412, 264);
+            this.buttonReset.Location = new System.Drawing.Point(391, 221);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(163, 52);
+            this.buttonReset.Size = new System.Drawing.Size(152, 52);
             this.buttonReset.TabIndex = 18;
             this.buttonReset.Text = "RESET";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // quitCtrlQToolStripMenuItem
-            // 
-            this.quitCtrlQToolStripMenuItem.Name = "quitCtrlQToolStripMenuItem";
-            this.quitCtrlQToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitCtrlQToolStripMenuItem.Size = new System.Drawing.Size(320, 40);
-            this.quitCtrlQToolStripMenuItem.Text = "Quit(Ctrl+Q)";
-            this.quitCtrlQToolStripMenuItem.Click += new System.EventHandler(this.quitCtrlQToolStripMenuItem_Click);
-            // 
-            // editEToolStripMenuItem
-            // 
-            this.editEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setSalaryToolStripMenuItem});
-            this.editEToolStripMenuItem.Name = "editEToolStripMenuItem";
-            this.editEToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
-            this.editEToolStripMenuItem.Text = "Edit(&E)";
-            // 
-            // setSalaryToolStripMenuItem
-            // 
-            this.setSalaryToolStripMenuItem.Name = "setSalaryToolStripMenuItem";
-            this.setSalaryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.setSalaryToolStripMenuItem.Size = new System.Drawing.Size(360, 40);
-            this.setSalaryToolStripMenuItem.Text = "Set Salary(Ctrl+&E)";
-            this.setSalaryToolStripMenuItem.Click += new System.EventHandler(this.setSalaryToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 339);
+            this.ClientSize = new System.Drawing.Size(940, 295);
+            this.Controls.Add(this.labelNumber7);
+            this.Controls.Add(this.labelNumber4);
+            this.Controls.Add(this.labelNumber6);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonStart);
@@ -344,10 +346,7 @@ namespace SalaryMeterForWindows
             this.Controls.Add(this.labelComma1);
             this.Controls.Add(this.labelNumber1);
             this.Controls.Add(this.labelNumber2);
-            this.Controls.Add(this.labelNumber4);
             this.Controls.Add(this.labelNumber5);
-            this.Controls.Add(this.labelNumber6);
-            this.Controls.Add(this.labelNumber7);
             this.Controls.Add(this.labelNumber8);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
