@@ -136,6 +136,7 @@ namespace SalaryMeterForWindows
         public void start(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
+            settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
@@ -156,6 +157,7 @@ namespace SalaryMeterForWindows
         public void setSalary(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
+            settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
@@ -203,6 +205,7 @@ namespace SalaryMeterForWindows
         public void setSalary(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
+            settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
@@ -250,6 +253,7 @@ namespace SalaryMeterForWindows
         public void setSalary(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
+            settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 stateManager.setSalaryPerHour(settingForm.salaryPerHour);
