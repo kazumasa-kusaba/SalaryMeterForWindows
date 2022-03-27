@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,14 @@ namespace SalaryMeterForWindows
             stateManager.setTotalSalaryCallback(updateNumbersCallback);
             stateManager.setElapsedTimeSecCallback(updateElapsedTime);
             stateManager.setSalaryPerHourCallback(updateSalaryPerHour);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // Set the title of this window
+            String productName = Application.ProductName;
+            String versionName = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            this.Text = productName + " Ver" + versionName;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -105,6 +114,13 @@ namespace SalaryMeterForWindows
         private void setSalaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             stateManager.setSalary();
+        }
+
+        private void aboutAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VersionForm versionForm = new VersionForm();
+            versionForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            versionForm.ShowDialog();
         }
     }
 }

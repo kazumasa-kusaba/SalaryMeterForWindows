@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SalaryMeterForWindows")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyProduct("Salary Meter")]
+[assembly: AssemblyCopyright("Copyright ©  2022 Kazumasa Kusaba")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
