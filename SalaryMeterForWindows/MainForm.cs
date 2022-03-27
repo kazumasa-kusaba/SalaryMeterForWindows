@@ -115,5 +115,12 @@ namespace SalaryMeterForWindows
         {
             stateManager.setSalary();
         }
+
+        private void aboutAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VersionForm versionForm = new VersionForm();
+            versionForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            versionForm.ShowDialog();
+        }
     }
 }

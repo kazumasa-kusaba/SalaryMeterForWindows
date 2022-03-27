@@ -52,6 +52,7 @@ namespace SalaryMeterForWindows
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.aboutAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +106,8 @@ namespace SalaryMeterForWindows
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutAToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(101, 34);
@@ -327,6 +330,14 @@ namespace SalaryMeterForWindows
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // aboutAToolStripMenuItem
+            // 
+            this.aboutAToolStripMenuItem.Name = "aboutAToolStripMenuItem";
+            this.aboutAToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.aboutAToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.aboutAToolStripMenuItem.Text = "About(&A)";
+            this.aboutAToolStripMenuItem.Click += new System.EventHandler(this.aboutAToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -353,9 +364,8 @@ namespace SalaryMeterForWindows
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Salary Meter";
+            this.Text = "Salary Meter VerX.X.X.X";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -389,6 +399,7 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.ToolStripMenuItem quitCtrlQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setSalaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutAToolStripMenuItem;
     }
 }
 
