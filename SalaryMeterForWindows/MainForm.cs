@@ -93,7 +93,7 @@ namespace SalaryMeterForWindows
 
         private void setWegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            salaryMeter.setSalary();
+            salaryMeter.setWege();
         }
 
         private void aboutAToolStripMenuItem_Click(object sender, EventArgs e)

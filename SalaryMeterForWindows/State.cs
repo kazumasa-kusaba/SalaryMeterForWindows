@@ -8,7 +8,7 @@ namespace SalaryMeterForWindows
         private static StateManager stateManager = new StateManager();
         private State state = WaitSetting.getInstance();
         private Timer timer = new Timer();
-        private Action<uint> salaryPerHourCallback = null;
+        private Action<uint> wegePerHourCallback = null;
 
         private StateManager()
         {
@@ -30,15 +30,15 @@ namespace SalaryMeterForWindows
             timer.setElapsedTimeSecCallback(callback);
         }
 
-        public void setSalaryPerHourCallback(Action<uint> callback)
+        public void setWegePerHourCallback(Action<uint> callback)
         {
-            salaryPerHourCallback = callback;
+            wegePerHourCallback = callback;
             timer.setSalaryPerHourCallback(callback);
         }
 
-        public void setSalaryPerHour(uint salaryPerHour)
+        public void setWegePerHour(uint wegePerHour)
         {
-            timer.setSalaryPerHour(salaryPerHour);
+            timer.setSalaryPerHour(wegePerHour);
         }
 
         public void start()
@@ -59,9 +59,9 @@ namespace SalaryMeterForWindows
             Debug.WriteLine("state: " + this.state.stateName);
         }
 
-        public void setSalary()
+        public void setWege()
         {
-            state.setSalary(this);
+            state.setWege(this);
             Debug.WriteLine("state: " + this.state.stateName);
         }
 
@@ -89,12 +89,12 @@ namespace SalaryMeterForWindows
             timer.reset();
         }
 
-        public void updateSalaryPerHour(uint salaryPerHour)
+        public void updateWegePerHour(uint wegePerHour)
         {
-            // notify the salary per hour
-            if (salaryPerHourCallback != null)
+            // Notify the wege per hour
+            if (wegePerHourCallback != null)
             {
-                salaryPerHourCallback(salaryPerHour);
+                wegePerHourCallback(wegePerHour);
             }
         }
     }
@@ -109,7 +109,7 @@ namespace SalaryMeterForWindows
         void start(StateManager stateManager);
         void pause(StateManager stateManager);
         void reset(StateManager stateManager);
-        void setSalary(StateManager stateManager);
+        void setWege(StateManager stateManager);
     }
 
     class WaitSetting : State
@@ -133,9 +133,9 @@ namespace SalaryMeterForWindows
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.setWegePerHour(settingForm.wegePerHour);
                 stateManager.startTimer();
-                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.updateWegePerHour(settingForm.wegePerHour);
                 stateManager.changeState(RunState.getInstance());
             }
         }
@@ -149,14 +149,14 @@ namespace SalaryMeterForWindows
             stateManager.resetTimer();
         }
 
-        public void setSalary(StateManager stateManager)
+        public void setWege(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
-                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.setWegePerHour(settingForm.wegePerHour);
+                stateManager.updateWegePerHour(settingForm.wegePerHour);
             }
         }
     }
@@ -195,14 +195,14 @@ namespace SalaryMeterForWindows
         {
             stateManager.resetTimer();
         }
-        public void setSalary(StateManager stateManager)
+        public void setWege(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
-                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.setWegePerHour(settingForm.wegePerHour);
+                stateManager.updateWegePerHour(settingForm.wegePerHour);
             }
         }
     }
@@ -242,14 +242,14 @@ namespace SalaryMeterForWindows
             stateManager.resetTimer();
             stateManager.changeState(PauseState.getInstance());
         }
-        public void setSalary(StateManager stateManager)
+        public void setWege(StateManager stateManager)
         {
             SettingForm settingForm = new SettingForm();
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                stateManager.setSalaryPerHour(settingForm.salaryPerHour);
-                stateManager.updateSalaryPerHour(settingForm.salaryPerHour);
+                stateManager.setWegePerHour(settingForm.wegePerHour);
+                stateManager.updateWegePerHour(settingForm.wegePerHour);
             }
         }
     }
