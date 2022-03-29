@@ -64,9 +64,6 @@ namespace SalaryMeterForWindows
                 String title = "Elapsed Time: ";
                 TimeSpan timeSpan = new TimeSpan(0, 0, (int)elapsedTimeSec);
 
-                //labelElapsedTime.Text = title + timeSpan.Hours.ToString("00")
-                //    + ":" + timeSpan.Minutes.ToString("00") 
-                //    + ":" + timeSpan.Seconds.ToString("00");
                 labelElapsedTime.Text = title + timeSpan.ToString();
             };
 
@@ -77,10 +74,9 @@ namespace SalaryMeterForWindows
         {
             Action action = delegate
             {
-                String title = "Salary: ";
-                String unit = "yen/h";
+                String title = "Wage Per Hour: ";
 
-                labelWagePerHour.Text = title + salaryPerHour.ToString() + " " + unit;
+                labelWagePerHour.Text = title + salaryPerHour.ToString("C");
             };
 
             Invoke(action);

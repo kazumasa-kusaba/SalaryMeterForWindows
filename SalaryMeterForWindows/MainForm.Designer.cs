@@ -55,7 +55,7 @@ namespace SalaryMeterForWindows
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +65,7 @@ namespace SalaryMeterForWindows
             this.quitCtrlQToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 34);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 38);
             this.fileToolStripMenuItem.Text = "File(&F)";
             // 
             // quitCtrlQToolStripMenuItem
@@ -82,7 +82,7 @@ namespace SalaryMeterForWindows
             this.setWageToolStripMenuItem});
             this.editEToolStripMenuItem.Name = "editEToolStripMenuItem";
             this.editEToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
+            this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 38);
             this.editEToolStripMenuItem.Text = "Edit(&E)";
             // 
             // setWageToolStripMenuItem
@@ -99,7 +99,7 @@ namespace SalaryMeterForWindows
             this.aboutAToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(101, 34);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(101, 38);
             this.helpToolStripMenuItem.Text = "Help(&H)";
             // 
             // aboutAToolStripMenuItem
@@ -126,9 +126,9 @@ namespace SalaryMeterForWindows
             this.labelWagePerHour.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelWagePerHour.Location = new System.Drawing.Point(586, 217);
             this.labelWagePerHour.Name = "labelWagePerHour";
-            this.labelWagePerHour.Size = new System.Drawing.Size(180, 28);
+            this.labelWagePerHour.Size = new System.Drawing.Size(231, 28);
             this.labelWagePerHour.TabIndex = 15;
-            this.labelWagePerHour.Text = "Wage: 0 yen/h";
+            this.labelWagePerHour.Text = "Wage Per Hour: \\0";
             // 
             // buttonStart
             // 
