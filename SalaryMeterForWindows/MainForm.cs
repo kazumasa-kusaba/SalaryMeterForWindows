@@ -16,7 +16,7 @@ namespace SalaryMeterForWindows
 
             salaryMeter.setAmountOfSalaryCallback(updateNumbersCallback);
             salaryMeter.setElapsedTimeSecCallback(updateElapsedTime);
-            salaryMeter.setSalaryPerHourCallback(updateSalaryPerHour);
+            salaryMeter.setWegePerHourCallback(updateSalaryPerHour);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
