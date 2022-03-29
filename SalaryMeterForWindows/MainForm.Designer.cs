@@ -35,7 +35,7 @@ namespace SalaryMeterForWindows
             this.editEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setWageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelElapsedTime = new System.Windows.Forms.Label();
             this.labelWagePerHour = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@ namespace SalaryMeterForWindows
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +65,7 @@ namespace SalaryMeterForWindows
             this.quitCtrlQToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 38);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 34);
             this.fileToolStripMenuItem.Text = "File(&F)";
             // 
             // quitCtrlQToolStripMenuItem
@@ -82,7 +82,7 @@ namespace SalaryMeterForWindows
             this.setWageToolStripMenuItem});
             this.editEToolStripMenuItem.Name = "editEToolStripMenuItem";
             this.editEToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 38);
+            this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
             this.editEToolStripMenuItem.Text = "Edit(&E)";
             // 
             // setWageToolStripMenuItem
@@ -96,19 +96,19 @@ namespace SalaryMeterForWindows
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutAToolStripMenuItem});
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(101, 38);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(101, 34);
             this.helpToolStripMenuItem.Text = "Help(&H)";
             // 
-            // aboutAToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.aboutAToolStripMenuItem.Name = "aboutAToolStripMenuItem";
-            this.aboutAToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-            this.aboutAToolStripMenuItem.Size = new System.Drawing.Size(281, 40);
-            this.aboutAToolStripMenuItem.Text = "About(&A)";
-            this.aboutAToolStripMenuItem.Click += new System.EventHandler(this.aboutAToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.aboutToolStripMenuItem.Text = "About(&A)";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // labelElapsedTime
             // 
@@ -216,7 +216,7 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.ToolStripMenuItem quitCtrlQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setWageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label labelAmountOfSalary;
     }
 }
