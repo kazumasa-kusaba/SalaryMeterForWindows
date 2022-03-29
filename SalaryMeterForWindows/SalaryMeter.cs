@@ -27,14 +27,9 @@ namespace SalaryMeterForWindows
             stateManager.setElapsedTimeSecCallback(callback);
         }
 
-        public void setSalaryPerHourCallback(Action<uint> callback)
+        public void setWagePerHourCallback(Action<uint> callback)
         {
-            stateManager.setSalaryPerHourCallback(callback);
-        }
-
-        public void setSalaryPerHour(uint salaryPerHour)
-        {
-            stateManager.setSalaryPerHour(salaryPerHour);
+            stateManager.setWagePerHourCallback(callback);
         }
 
         public void start()
@@ -52,9 +47,9 @@ namespace SalaryMeterForWindows
             stateManager.reset();
         }
 
-        public void setSalary()
+        public void setWage()
         {
-            stateManager.setSalary();
+            stateManager.setWage();
         }
     }
 }

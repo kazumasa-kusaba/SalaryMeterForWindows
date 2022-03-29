@@ -6,7 +6,6 @@ namespace SalaryMeterForWindows
 {
     public partial class MainForm : Form
     {
-        //private StateManager stateManager = StateManager.getInstance();
         private SalaryMeter salaryMeter = SalaryMeter.getInstance();
 
         public MainForm()
@@ -17,7 +16,7 @@ namespace SalaryMeterForWindows
 
             salaryMeter.setAmountOfSalaryCallback(updateNumbersCallback);
             salaryMeter.setElapsedTimeSecCallback(updateElapsedTime);
-            salaryMeter.setSalaryPerHourCallback(updateSalaryPerHour);
+            salaryMeter.setWagePerHourCallback(updateSalaryPerHour);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -65,9 +64,6 @@ namespace SalaryMeterForWindows
                 String title = "Elapsed Time: ";
                 TimeSpan timeSpan = new TimeSpan(0, 0, (int)elapsedTimeSec);
 
-                //labelElapsedTime.Text = title + timeSpan.Hours.ToString("00")
-                //    + ":" + timeSpan.Minutes.ToString("00") 
-                //    + ":" + timeSpan.Seconds.ToString("00");
                 labelElapsedTime.Text = title + timeSpan.ToString();
             };
 
@@ -78,10 +74,9 @@ namespace SalaryMeterForWindows
         {
             Action action = delegate
             {
-                String title = "Salary: ";
-                String unit = "yen/h";
+                String title = "Wage Per Hour: ";
 
-                labelSalaryPerHour.Text = title + salaryPerHour.ToString() + " " + unit;
+                labelWagePerHour.Text = title + salaryPerHour.ToString("C");
             };
 
             Invoke(action);
@@ -92,12 +87,12 @@ namespace SalaryMeterForWindows
             Application.Exit();
         }
 
-        private void setSalaryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void setWageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            salaryMeter.setSalary();
+            salaryMeter.setWage();
         }
 
-        private void aboutAToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VersionForm versionForm = new VersionForm();
             versionForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
