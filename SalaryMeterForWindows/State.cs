@@ -36,11 +36,6 @@ namespace SalaryMeterForWindows
             timer.setWagePerHourCallback(callback);
         }
 
-        public void setWagePerHour(uint wagePerHour)
-        {
-            timer.setWagePerHour(wagePerHour);
-        }
-
         public void start()
         {
             state.start(this);
@@ -87,6 +82,11 @@ namespace SalaryMeterForWindows
         public void resetTimer()
         {
             timer.reset();
+        }
+
+        public void setWagePerHour(uint wagePerHour)
+        {
+            timer.setWagePerHour(wagePerHour);
         }
 
         public void updateWagePerHour(uint wagePerHour)
@@ -157,6 +157,7 @@ namespace SalaryMeterForWindows
             {
                 stateManager.setWagePerHour(settingForm.wagePerHour);
                 stateManager.updateWagePerHour(settingForm.wagePerHour);
+                stateManager.changeState(PauseState.getInstance());
             }
         }
     }
