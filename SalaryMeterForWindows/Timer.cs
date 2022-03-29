@@ -11,7 +11,7 @@ namespace SalaryMeterForWindows
 {
     class Timer
     {
-        private Action<uint> totalSalaryCallback = null;
+        private Action<uint> amountOfSalaryCallback = null;
         private Action<uint> elapsedTimeSecCallback = null;
         private Action<uint> salaryPerHourCallback = null;
         
@@ -40,9 +40,9 @@ namespace SalaryMeterForWindows
             */
         }
 
-        public void setTotalSalaryCallback(Action<uint> callback)
+        public void setAmountOfSalaryCallback(Action<uint> callback)
         {
-            this.totalSalaryCallback = callback;
+            this.amountOfSalaryCallback = callback;
         }
 
         public void setElapsedTimeSecCallback(Action<uint> callback)
@@ -74,7 +74,7 @@ namespace SalaryMeterForWindows
         {
             timer.Enabled = false;
             salaryInformation.elapsedTimeSec = 0;
-            totalSalaryCallback(0);
+            amountOfSalaryCallback(0);
             elapsedTimeSecCallback(0);
         }
 
@@ -82,7 +82,7 @@ namespace SalaryMeterForWindows
         {
             timer.Enabled = false;
             salaryInformation.elapsedTimeSec = 0;
-            totalSalaryCallback(0);
+            amountOfSalaryCallback(0);
             elapsedTimeSecCallback(0);
         }
 
@@ -94,12 +94,12 @@ namespace SalaryMeterForWindows
 
             salaryInformation.elapsedTimeSec += 1;
 
-            uint totalSalary = (uint)(salaryInformation.salaryPerHour / 3600.0 * salaryInformation.elapsedTimeSec);
+            uint amountOfSalary = (uint)(salaryInformation.salaryPerHour / 3600.0 * salaryInformation.elapsedTimeSec);
 
             // notify the total salary
-            if (totalSalaryCallback != null)
+            if (amountOfSalaryCallback != null)
             {
-                totalSalaryCallback(totalSalary);
+                amountOfSalaryCallback(amountOfSalary);
             }
 
             // notify the elapsed time
