@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalaryMeterForWindows
 {
     public partial class MainForm : Form
     {
-        private StateManager stateManager = StateManager.getInstance();
+        //private StateManager stateManager = StateManager.getInstance();
+        private SalaryMeter salaryMeter = SalaryMeter.getInstance();
 
         public MainForm()
         {
@@ -21,9 +15,9 @@ namespace SalaryMeterForWindows
 
             labelAmountOfSalary.Text = (0).ToString("C");
 
-            stateManager.setAmountOfSalaryCallback(updateNumbersCallback);
-            stateManager.setElapsedTimeSecCallback(updateElapsedTime);
-            stateManager.setSalaryPerHourCallback(updateSalaryPerHour);
+            salaryMeter.setAmountOfSalaryCallback(updateNumbersCallback);
+            salaryMeter.setElapsedTimeSecCallback(updateElapsedTime);
+            salaryMeter.setSalaryPerHourCallback(updateSalaryPerHour);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -36,17 +30,17 @@ namespace SalaryMeterForWindows
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            stateManager.start();
+            salaryMeter.start();
         }
 
         private void buttonPause_Click(object sender, EventArgs e)
         {
-            stateManager.pause();
+            salaryMeter.pause();
         }
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
-            stateManager.reset();
+            salaryMeter.reset();
         }
 
         private void updateNumbersCallback(uint amountOfSalary)
@@ -100,7 +94,7 @@ namespace SalaryMeterForWindows
 
         private void setSalaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            stateManager.setSalary();
+            salaryMeter.setSalary();
         }
 
         private void aboutAToolStripMenuItem_Click(object sender, EventArgs e)

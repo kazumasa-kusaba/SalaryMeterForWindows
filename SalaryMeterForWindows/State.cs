@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalaryMeterForWindows
 {
     class StateManager
     {
         private static StateManager stateManager = new StateManager();
-
         private State state = WaitSetting.getInstance();
         private Timer timer = new Timer();
-
         private Action<uint> salaryPerHourCallback = null;
 
         private StateManager()
         {
-            // singleton
+            // Singleton
         }
 
         public static StateManager getInstance()
@@ -147,7 +141,7 @@ namespace SalaryMeterForWindows
         }
         public void pause(StateManager stateManager)
         {
-            // nothing to do
+            // Nothing to do
         }
 
         public void reset(StateManager stateManager)
@@ -174,7 +168,7 @@ namespace SalaryMeterForWindows
 
         private PauseState()
         {
-            // singleton pattern
+            // Singleton
         }
 
         public static PauseState getInstance()
@@ -194,7 +188,7 @@ namespace SalaryMeterForWindows
         }
         public void pause(StateManager stateManager)
         {
-            // nothing to do
+            // Nothing to do
         }
 
         public void reset(StateManager stateManager)
@@ -220,8 +214,7 @@ namespace SalaryMeterForWindows
 
         private RunState()
         {
-            // singleton pattern
-            // nothing to do
+            // Singleton
         }
 
         public static RunState getInstance()
@@ -236,7 +229,7 @@ namespace SalaryMeterForWindows
 
         public void start(StateManager stateManager)
         {
-            // nothing to do
+            // Nothing to do
         }
         public void pause(StateManager stateManager)
         {
