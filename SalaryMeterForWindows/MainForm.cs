@@ -20,10 +20,7 @@ namespace SalaryMeterForWindows
         {
             InitializeComponent();
 
-            labelNumbers = new Label[] { 
-                labelNumber1, labelNumber2, labelNumber3, 
-                labelNumber4, labelNumber5, labelNumber6, 
-                labelNumber7, labelNumber8, labelNumber9 };
+            labelAmountOfSalary.Text = (0).ToString("C");
 
             stateManager.setTotalSalaryCallback(updateNumbersCallback);
             stateManager.setElapsedTimeSecCallback(updateElapsedTime);
@@ -57,22 +54,13 @@ namespace SalaryMeterForWindows
         {
             Action action = delegate
             {
-                uint[] numberVals = new uint[labelNumbers.Length];
-
                 if (totalSalary >= 999999999)
                 {
-                    for (int i = 0; i < numberVals.Length; i++)
-                    {
-                        labelNumbers[i].Text = "9";
-                    }
+                    labelAmountOfSalary.Text = (999999999).ToString("C");
                     return;
                 }
 
-                for (int i = 0; i < numberVals.Length; i++)
-                {
-                    labelNumbers[i].Text = (totalSalary % 10).ToString();
-                    totalSalary /= 10;
-                }
+                labelAmountOfSalary.Text = totalSalary.ToString("C");
             };
 
             Invoke(action);
