@@ -31,12 +31,12 @@ namespace SalaryMeterForWindows
         {
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.labelWegePerHour = new System.Windows.Forms.Label();
-            this.numericUpDownWegePerHour = new System.Windows.Forms.NumericUpDown();
+            this.labelWagePerHour = new System.Windows.Forms.Label();
+            this.numericUpDownWagePerHour = new System.Windows.Forms.NumericUpDown();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelYen = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWegePerHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWagePerHour)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -45,30 +45,30 @@ namespace SalaryMeterForWindows
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // labelWegePerHour
+            // labelWagePerHour
             // 
-            this.labelWegePerHour.AutoSize = true;
-            this.labelWegePerHour.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelWegePerHour.Location = new System.Drawing.Point(28, 33);
-            this.labelWegePerHour.MaximumSize = new System.Drawing.Size(170, 21);
-            this.labelWegePerHour.MinimumSize = new System.Drawing.Size(170, 21);
-            this.labelWegePerHour.Name = "labelWegePerHour";
-            this.labelWegePerHour.Size = new System.Drawing.Size(170, 21);
-            this.labelWegePerHour.TabIndex = 1;
-            this.labelWegePerHour.Text = "Wege Per Hour :";
+            this.labelWagePerHour.AutoSize = true;
+            this.labelWagePerHour.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelWagePerHour.Location = new System.Drawing.Point(28, 33);
+            this.labelWagePerHour.MaximumSize = new System.Drawing.Size(170, 21);
+            this.labelWagePerHour.MinimumSize = new System.Drawing.Size(170, 21);
+            this.labelWagePerHour.Name = "labelWagePerHour";
+            this.labelWagePerHour.Size = new System.Drawing.Size(170, 21);
+            this.labelWagePerHour.TabIndex = 1;
+            this.labelWagePerHour.Text = "Wage Per Hour :";
             // 
-            // numericUpDownWegePerHour
+            // numericUpDownWagePerHour
             // 
-            this.numericUpDownWegePerHour.Location = new System.Drawing.Point(202, 30);
-            this.numericUpDownWegePerHour.Maximum = new decimal(new int[] {
+            this.numericUpDownWagePerHour.Location = new System.Drawing.Point(202, 30);
+            this.numericUpDownWagePerHour.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
-            this.numericUpDownWegePerHour.MaximumSize = new System.Drawing.Size(300, 0);
-            this.numericUpDownWegePerHour.Name = "numericUpDownWegePerHour";
-            this.numericUpDownWegePerHour.Size = new System.Drawing.Size(164, 28);
-            this.numericUpDownWegePerHour.TabIndex = 2;
+            this.numericUpDownWagePerHour.MaximumSize = new System.Drawing.Size(300, 0);
+            this.numericUpDownWagePerHour.Name = "numericUpDownWagePerHour";
+            this.numericUpDownWagePerHour.Size = new System.Drawing.Size(164, 28);
+            this.numericUpDownWagePerHour.TabIndex = 2;
             // 
             // buttonOk
             // 
@@ -111,14 +111,14 @@ namespace SalaryMeterForWindows
             this.Controls.Add(this.labelYen);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
-            this.Controls.Add(this.numericUpDownWegePerHour);
-            this.Controls.Add(this.labelWegePerHour);
+            this.Controls.Add(this.numericUpDownWagePerHour);
+            this.Controls.Add(this.labelWagePerHour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingForm";
             this.Text = "Setting";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWegePerHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWagePerHour)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,8 +127,8 @@ namespace SalaryMeterForWindows
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label labelWegePerHour;
-        private System.Windows.Forms.NumericUpDown numericUpDownWegePerHour;
+        private System.Windows.Forms.Label labelWagePerHour;
+        private System.Windows.Forms.NumericUpDown numericUpDownWagePerHour;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelYen;

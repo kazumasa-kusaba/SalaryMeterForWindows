@@ -16,7 +16,7 @@ namespace SalaryMeterForWindows
 
             salaryMeter.setAmountOfSalaryCallback(updateNumbersCallback);
             salaryMeter.setElapsedTimeSecCallback(updateElapsedTime);
-            salaryMeter.setWegePerHourCallback(updateSalaryPerHour);
+            salaryMeter.setWagePerHourCallback(updateSalaryPerHour);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -91,9 +91,9 @@ namespace SalaryMeterForWindows
             Application.Exit();
         }
 
-        private void setWegeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void setWageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            salaryMeter.setWege();
+            salaryMeter.setWage();
         }
 
         private void aboutAToolStripMenuItem_Click(object sender, EventArgs e)

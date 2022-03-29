@@ -5,31 +5,31 @@ namespace SalaryMeterForWindows
 {
     public partial class SettingForm : Form
     {
-        private uint _wegePerHour = 0;
+        private uint _wagePerHour = 0;
 
         public SettingForm()
         {
             InitializeComponent();
 
             // Set the cursor to the most right
-            numericUpDownWegePerHour.Select(numericUpDownWegePerHour.Value.ToString().Length, 0);
+            numericUpDownWagePerHour.Select(numericUpDownWagePerHour.Value.ToString().Length, 0);
         }
 
-        public uint wegePerHour
+        public uint wagePerHour
         {
             get
             {
-                return _wegePerHour;
+                return _wagePerHour;
             }
             set
             {
-                _wegePerHour = value;
+                _wagePerHour = value;
             }
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            _wegePerHour = (uint)numericUpDownWegePerHour.Value;
+            _wagePerHour = (uint)numericUpDownWagePerHour.Value;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

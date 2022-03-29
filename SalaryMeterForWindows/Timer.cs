@@ -8,16 +8,16 @@ namespace SalaryMeterForWindows
     {
         private Action<uint> amountOfSalaryCallback = null;
         private Action<uint> elapsedTimeSecCallback = null;
-        private Action<uint> wegePerHourCallback = null;
+        private Action<uint> wagePerHourCallback = null;
         
         System.Timers.Timer timer = null;
 
-        private struct WegeInformation
+        private struct WageInformation
         {
             public uint elapsedTimeSec;
-            public uint wegePerHour;
+            public uint wagePerHour;
         }
-        private WegeInformation wegeInformation = new WegeInformation();
+        private WageInformation wageInformation = new WageInformation();
 
         public Timer()
         {
@@ -25,8 +25,8 @@ namespace SalaryMeterForWindows
             timer.Elapsed += onTimedEvent;
             timer.AutoReset = true;
 
-            wegeInformation.elapsedTimeSec = 0;
-            wegeInformation.wegePerHour = 0;
+            wageInformation.elapsedTimeSec = 0;
+            wageInformation.wagePerHour = 0;
         }
 
         public void setAmountOfSalaryCallback(Action<uint> callback)
@@ -39,14 +39,14 @@ namespace SalaryMeterForWindows
             this.elapsedTimeSecCallback = callback;
         }
 
-        public void setWegePerHourCallback(Action<uint> callback)
+        public void setWagePerHourCallback(Action<uint> callback)
         {
-            this.wegePerHourCallback = callback;
+            this.wagePerHourCallback = callback;
         }
 
-        public void setWegePerHour(uint wegePerHour)
+        public void setWagePerHour(uint wagePerHour)
         {
-            wegeInformation.wegePerHour = wegePerHour;
+            wageInformation.wagePerHour = wagePerHour;
         }
 
         public void start()
@@ -62,7 +62,7 @@ namespace SalaryMeterForWindows
         public void stop()
         {
             timer.Enabled = false;
-            wegeInformation.elapsedTimeSec = 0;
+            wageInformation.elapsedTimeSec = 0;
             amountOfSalaryCallback(0);
             elapsedTimeSecCallback(0);
         }
@@ -70,7 +70,7 @@ namespace SalaryMeterForWindows
         public void reset()
         {
             timer.Enabled = false;
-            wegeInformation.elapsedTimeSec = 0;
+            wageInformation.elapsedTimeSec = 0;
             amountOfSalaryCallback(0);
             elapsedTimeSecCallback(0);
         }
@@ -81,9 +81,9 @@ namespace SalaryMeterForWindows
             DateTime dt = DateTime.Now;
             Debug.WriteLine(dt.ToString("yyyy/MM/dd HH:mm:ss"));
 
-            wegeInformation.elapsedTimeSec += 1;
+            wageInformation.elapsedTimeSec += 1;
 
-            uint amountOfSalary = (uint)(wegeInformation.wegePerHour / 3600.0 * wegeInformation.elapsedTimeSec);
+            uint amountOfSalary = (uint)(wageInformation.wagePerHour / 3600.0 * wageInformation.elapsedTimeSec);
 
             // Notify the amount of salary
             if (amountOfSalaryCallback != null)
@@ -94,13 +94,13 @@ namespace SalaryMeterForWindows
             // notify the elapsed time
             if (elapsedTimeSecCallback != null)
             {
-                elapsedTimeSecCallback(wegeInformation.elapsedTimeSec);
+                elapsedTimeSecCallback(wageInformation.elapsedTimeSec);
             }
 
             // notify the salary per hour
-            if (wegePerHourCallback != null)
+            if (wagePerHourCallback != null)
             {
-                wegePerHourCallback(wegeInformation.wegePerHour);
+                wagePerHourCallback(wageInformation.wagePerHour);
             }
         }
     }
