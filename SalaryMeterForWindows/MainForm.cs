@@ -14,18 +14,14 @@ namespace SalaryMeterForWindows
     public partial class MainForm : Form
     {
         private StateManager stateManager = StateManager.getInstance();
-        private Label[] labelNumbers;
 
         public MainForm()
         {
             InitializeComponent();
 
-            labelNumbers = new Label[] { 
-                labelNumber1, labelNumber2, labelNumber3, 
-                labelNumber4, labelNumber5, labelNumber6, 
-                labelNumber7, labelNumber8, labelNumber9 };
+            labelAmountOfSalary.Text = (0).ToString("C");
 
-            stateManager.setTotalSalaryCallback(updateNumbersCallback);
+            stateManager.setAmountOfSalaryCallback(updateNumbersCallback);
             stateManager.setElapsedTimeSecCallback(updateElapsedTime);
             stateManager.setSalaryPerHourCallback(updateSalaryPerHour);
         }
@@ -53,26 +49,17 @@ namespace SalaryMeterForWindows
             stateManager.reset();
         }
 
-        private void updateNumbersCallback(uint totalSalary)
+        private void updateNumbersCallback(uint amountOfSalary)
         {
             Action action = delegate
             {
-                uint[] numberVals = new uint[labelNumbers.Length];
-
-                if (totalSalary >= 999999999)
+                if (amountOfSalary >= 999999999)
                 {
-                    for (int i = 0; i < numberVals.Length; i++)
-                    {
-                        labelNumbers[i].Text = "9";
-                    }
+                    labelAmountOfSalary.Text = (999999999).ToString("C");
                     return;
                 }
 
-                for (int i = 0; i < numberVals.Length; i++)
-                {
-                    labelNumbers[i].Text = (totalSalary % 10).ToString();
-                    totalSalary /= 10;
-                }
+                labelAmountOfSalary.Text = amountOfSalary.ToString("C");
             };
 
             Invoke(action);
