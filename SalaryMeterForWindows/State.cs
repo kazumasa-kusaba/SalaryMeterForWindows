@@ -33,12 +33,12 @@ namespace SalaryMeterForWindows
         public void setWegePerHourCallback(Action<uint> callback)
         {
             wegePerHourCallback = callback;
-            timer.setSalaryPerHourCallback(callback);
+            timer.setWegePerHourCallback(callback);
         }
 
         public void setWegePerHour(uint wegePerHour)
         {
-            timer.setSalaryPerHour(wegePerHour);
+            timer.setWegePerHour(wegePerHour);
         }
 
         public void start()
