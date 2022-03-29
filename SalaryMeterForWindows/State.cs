@@ -141,7 +141,7 @@ namespace SalaryMeterForWindows
         }
         public void pause(StateManager stateManager)
         {
-            // nothing to do
+            // Nothing to do
         }
 
         public void reset(StateManager stateManager)
@@ -168,7 +168,7 @@ namespace SalaryMeterForWindows
 
         private PauseState()
         {
-            // singleton pattern
+            // Singleton
         }
 
         public static PauseState getInstance()
@@ -188,7 +188,7 @@ namespace SalaryMeterForWindows
         }
         public void pause(StateManager stateManager)
         {
-            // nothing to do
+            // Nothing to do
         }
 
         public void reset(StateManager stateManager)
@@ -214,8 +214,7 @@ namespace SalaryMeterForWindows
 
         private RunState()
         {
-            // singleton pattern
-            // nothing to do
+            // Singleton
         }
 
         public static RunState getInstance()
@@ -230,7 +229,7 @@ namespace SalaryMeterForWindows
 
         public void start(StateManager stateManager)
         {
-            // nothing to do
+            // Nothing to do
         }
         public void pause(StateManager stateManager)
         {

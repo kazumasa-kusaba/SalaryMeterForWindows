@@ -34,7 +34,7 @@ namespace SalaryMeterForWindows
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            // nothing to do
+            // Nothing to do
         }
     }
 }
