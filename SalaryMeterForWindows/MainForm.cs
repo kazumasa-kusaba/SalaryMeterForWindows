@@ -6,7 +6,6 @@ namespace SalaryMeterForWindows
 {
     public partial class MainForm : Form
     {
-        //private StateManager stateManager = StateManager.getInstance();
         private SalaryMeter salaryMeter = SalaryMeter.getInstance();
 
         public MainForm()
@@ -81,7 +80,7 @@ namespace SalaryMeterForWindows
                 String title = "Salary: ";
                 String unit = "yen/h";
 
-                labelSalaryPerHour.Text = title + salaryPerHour.ToString() + " " + unit;
+                labelWagePerHour.Text = title + salaryPerHour.ToString() + " " + unit;
             };
 
             Invoke(action);
@@ -92,7 +91,7 @@ namespace SalaryMeterForWindows
             Application.Exit();
         }
 
-        private void setSalaryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void setWegeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             salaryMeter.setSalary();
         }

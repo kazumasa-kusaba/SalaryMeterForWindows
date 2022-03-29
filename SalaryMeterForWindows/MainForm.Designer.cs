@@ -33,11 +33,11 @@ namespace SalaryMeterForWindows
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitCtrlQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setWegeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelElapsedTime = new System.Windows.Forms.Label();
-            this.labelSalaryPerHour = new System.Windows.Forms.Label();
+            this.labelWagePerHour = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@ namespace SalaryMeterForWindows
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -54,7 +55,7 @@ namespace SalaryMeterForWindows
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,19 +79,19 @@ namespace SalaryMeterForWindows
             // editEToolStripMenuItem
             // 
             this.editEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setSalaryToolStripMenuItem});
+            this.setWegeToolStripMenuItem});
             this.editEToolStripMenuItem.Name = "editEToolStripMenuItem";
             this.editEToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.editEToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
             this.editEToolStripMenuItem.Text = "Edit(&E)";
             // 
-            // setSalaryToolStripMenuItem
+            // setWegeToolStripMenuItem
             // 
-            this.setSalaryToolStripMenuItem.Name = "setSalaryToolStripMenuItem";
-            this.setSalaryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.setSalaryToolStripMenuItem.Size = new System.Drawing.Size(360, 40);
-            this.setSalaryToolStripMenuItem.Text = "Set Salary(Ctrl+&E)";
-            this.setSalaryToolStripMenuItem.Click += new System.EventHandler(this.setSalaryToolStripMenuItem_Click);
+            this.setWegeToolStripMenuItem.Name = "setWegeToolStripMenuItem";
+            this.setWegeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.setWegeToolStripMenuItem.Size = new System.Drawing.Size(358, 40);
+            this.setWegeToolStripMenuItem.Text = "Set Wage(Ctrl+&E)";
+            this.setWegeToolStripMenuItem.Click += new System.EventHandler(this.setWegeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -119,15 +120,15 @@ namespace SalaryMeterForWindows
             this.labelElapsedTime.TabIndex = 14;
             this.labelElapsedTime.Text = "Elapsed Time: 00:00:00";
             // 
-            // labelSalaryPerHour
+            // labelWagePerHour
             // 
-            this.labelSalaryPerHour.AutoSize = true;
-            this.labelSalaryPerHour.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelSalaryPerHour.Location = new System.Drawing.Point(586, 217);
-            this.labelSalaryPerHour.Name = "labelSalaryPerHour";
-            this.labelSalaryPerHour.Size = new System.Drawing.Size(191, 28);
-            this.labelSalaryPerHour.TabIndex = 15;
-            this.labelSalaryPerHour.Text = "Salary: 0 yen/h";
+            this.labelWagePerHour.AutoSize = true;
+            this.labelWagePerHour.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelWagePerHour.Location = new System.Drawing.Point(586, 217);
+            this.labelWagePerHour.Name = "labelWagePerHour";
+            this.labelWagePerHour.Size = new System.Drawing.Size(180, 28);
+            this.labelWagePerHour.TabIndex = 15;
+            this.labelWagePerHour.Text = "Wage: 0 yen/h";
             // 
             // buttonStart
             // 
@@ -186,7 +187,7 @@ namespace SalaryMeterForWindows
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonStart);
-            this.Controls.Add(this.labelSalaryPerHour);
+            this.Controls.Add(this.labelWagePerHour);
             this.Controls.Add(this.labelElapsedTime);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -208,13 +209,13 @@ namespace SalaryMeterForWindows
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label labelElapsedTime;
-        private System.Windows.Forms.Label labelSalaryPerHour;
+        private System.Windows.Forms.Label labelWagePerHour;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonPause;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.ToolStripMenuItem quitCtrlQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setSalaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setWegeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutAToolStripMenuItem;
         private System.Windows.Forms.Label labelAmountOfSalary;
     }
