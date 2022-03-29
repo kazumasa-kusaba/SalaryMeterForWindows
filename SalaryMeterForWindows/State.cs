@@ -6,15 +6,13 @@ namespace SalaryMeterForWindows
     class StateManager
     {
         private static StateManager stateManager = new StateManager();
-
         private State state = WaitSetting.getInstance();
         private Timer timer = new Timer();
-
         private Action<uint> salaryPerHourCallback = null;
 
         private StateManager()
         {
-            // singleton
+            // Singleton
         }
 
         public static StateManager getInstance()

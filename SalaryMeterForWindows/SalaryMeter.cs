@@ -4,7 +4,18 @@ namespace SalaryMeterForWindows
 {
     class SalaryMeter
     {
+        private static SalaryMeter salaryMeter = new SalaryMeter();
         private StateManager stateManager = StateManager.getInstance();
+
+        private SalaryMeter()
+        {
+            // Singleton
+        }
+
+        public static SalaryMeter getInstance()
+        {
+            return salaryMeter;
+        }
 
         public void setAmountOfSalaryCallback(Action<uint> callback)
         {
