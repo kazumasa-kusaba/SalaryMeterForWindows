@@ -49,6 +49,11 @@ namespace SalaryMeterForWindows
             wageInformation.wagePerHour = wagePerHour;
         }
 
+        public uint getWagePerHour()
+        {
+            return wageInformation.wagePerHour;
+        }
+
         public void start()
         {
             timer.Enabled = true;

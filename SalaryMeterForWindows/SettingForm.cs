@@ -7,9 +7,12 @@ namespace SalaryMeterForWindows
     {
         private uint _wagePerHour = 0;
 
-        public SettingForm()
+        public SettingForm(uint wagePerHour)
         {
             InitializeComponent();
+
+            // Set the default wage per hour
+            numericUpDownWagePerHour.Value = wagePerHour;
 
             // Set the cursor to the most right
             numericUpDownWagePerHour.Select(numericUpDownWagePerHour.Value.ToString().Length, 0);
@@ -17,14 +20,8 @@ namespace SalaryMeterForWindows
 
         public uint wagePerHour
         {
-            get
-            {
-                return _wagePerHour;
-            }
-            set
-            {
-                _wagePerHour = value;
-            }
+            get { return _wagePerHour; }
+            set { _wagePerHour = value; }
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
