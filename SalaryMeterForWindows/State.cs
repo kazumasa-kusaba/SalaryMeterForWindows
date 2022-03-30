@@ -89,6 +89,11 @@ namespace SalaryMeterForWindows
             timer.setWagePerHour(wagePerHour);
         }
 
+        public uint getWagePerHour()
+        {
+            return timer.getWagePerHour();
+        }
+
         public void updateWagePerHour(uint wagePerHour)
         {
             // Notify the wage per hour
@@ -129,7 +134,7 @@ namespace SalaryMeterForWindows
 
         public void start(StateManager stateManager)
         {
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(stateManager.getWagePerHour());
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -151,7 +156,7 @@ namespace SalaryMeterForWindows
 
         public void setWage(StateManager stateManager)
         {
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(stateManager.getWagePerHour());
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -198,7 +203,7 @@ namespace SalaryMeterForWindows
         }
         public void setWage(StateManager stateManager)
         {
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(stateManager.getWagePerHour());
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -245,7 +250,7 @@ namespace SalaryMeterForWindows
         }
         public void setWage(StateManager stateManager)
         {
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(stateManager.getWagePerHour());
             settingForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             if (settingForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
