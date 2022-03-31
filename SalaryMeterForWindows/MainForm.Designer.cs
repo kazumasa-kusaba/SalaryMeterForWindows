@@ -48,7 +48,6 @@ namespace SalaryMeterForWindows
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -56,7 +55,7 @@ namespace SalaryMeterForWindows
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(710, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,30 +113,30 @@ namespace SalaryMeterForWindows
             // labelElapsedTime
             // 
             this.labelElapsedTime.AutoSize = true;
-            this.labelElapsedTime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelElapsedTime.Location = new System.Drawing.Point(586, 245);
+            this.labelElapsedTime.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelElapsedTime.Location = new System.Drawing.Point(463, 226);
             this.labelElapsedTime.Name = "labelElapsedTime";
-            this.labelElapsedTime.Size = new System.Drawing.Size(280, 28);
+            this.labelElapsedTime.Size = new System.Drawing.Size(209, 21);
             this.labelElapsedTime.TabIndex = 14;
             this.labelElapsedTime.Text = "Elapsed Time: 00:00:00";
             // 
             // labelWagePerHour
             // 
             this.labelWagePerHour.AutoSize = true;
-            this.labelWagePerHour.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelWagePerHour.Location = new System.Drawing.Point(586, 217);
+            this.labelWagePerHour.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelWagePerHour.Location = new System.Drawing.Point(463, 198);
             this.labelWagePerHour.Name = "labelWagePerHour";
-            this.labelWagePerHour.Size = new System.Drawing.Size(231, 28);
+            this.labelWagePerHour.Size = new System.Drawing.Size(174, 21);
             this.labelWagePerHour.TabIndex = 15;
             this.labelWagePerHour.Text = "Wage Per Hour: \\0";
             // 
             // buttonStart
             // 
             this.buttonStart.AutoSize = true;
-            this.buttonStart.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonStart.Location = new System.Drawing.Point(29, 221);
+            this.buttonStart.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonStart.Location = new System.Drawing.Point(29, 198);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(156, 52);
+            this.buttonStart.Size = new System.Drawing.Size(119, 52);
             this.buttonStart.TabIndex = 16;
             this.buttonStart.Text = "START";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -146,10 +145,10 @@ namespace SalaryMeterForWindows
             // buttonPause
             // 
             this.buttonPause.AutoSize = true;
-            this.buttonPause.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonPause.Location = new System.Drawing.Point(209, 221);
+            this.buttonPause.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonPause.Location = new System.Drawing.Point(173, 198);
             this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(157, 52);
+            this.buttonPause.Size = new System.Drawing.Size(115, 52);
             this.buttonPause.TabIndex = 17;
             this.buttonPause.Text = "PAUSE";
             this.buttonPause.UseVisualStyleBackColor = true;
@@ -158,10 +157,10 @@ namespace SalaryMeterForWindows
             // buttonReset
             // 
             this.buttonReset.AutoSize = true;
-            this.buttonReset.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonReset.Location = new System.Drawing.Point(391, 221);
+            this.buttonReset.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonReset.Location = new System.Drawing.Point(312, 198);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(152, 52);
+            this.buttonReset.Size = new System.Drawing.Size(115, 52);
             this.buttonReset.TabIndex = 18;
             this.buttonReset.Text = "RESET";
             this.buttonReset.UseVisualStyleBackColor = true;
@@ -171,10 +170,10 @@ namespace SalaryMeterForWindows
             // 
             this.labelAmountOfSalary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAmountOfSalary.Font = new System.Drawing.Font("MS UI Gothic", 65.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelAmountOfSalary.Location = new System.Drawing.Point(12, 55);
+            this.labelAmountOfSalary.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelAmountOfSalary.Location = new System.Drawing.Point(6, 53);
             this.labelAmountOfSalary.Name = "labelAmountOfSalary";
-            this.labelAmountOfSalary.Size = new System.Drawing.Size(916, 141);
+            this.labelAmountOfSalary.Size = new System.Drawing.Size(698, 141);
             this.labelAmountOfSalary.TabIndex = 19;
             this.labelAmountOfSalary.Text = "\\999,999,999";
             this.labelAmountOfSalary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +182,7 @@ namespace SalaryMeterForWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 295);
+            this.ClientSize = new System.Drawing.Size(710, 264);
             this.Controls.Add(this.labelAmountOfSalary);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonPause);
